@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "template": "multi-role-council",
+    "description": "Self-contained council debate JSON. An LLM receiving this file needs nothing else to execute the next step, resume mid-session, or complete the full council run.",
+    "usage_rule": "LLM must read 'session_state.next_action' first. That field alone tells the LLM exactly what to do. After completing the action, LLM returns the ENTIRE updated JSON with the relevant fields filled — not just the contribution text."
+  },
+
+  "council_metadata": {
+    "council_id": "COUNCIL_[TOPIC]_001",
+    "created_date": "YYYY-MM-DD",
+    "topic_domain": "[e.g. business / product / investment / hiring / policy]",
+    "total_rounds_planned": 2,
+    "current_round": 1,
+    "total_llm_passes_completed": 0,
+    "status": "in_progress"
+  },
+
+  "problem_statement": {
+    "anchor_topic": "YOUR CORE QUESTION HERE",
+    "context_and_constraints": "Budget · Timeline · Geography · Team size · Regulatory limits · Any hard constraints",
+    "success_definition": "What does a good answer look like? e.g. Top 2 actionable paths with revenue math and a 30-day roadmap"
+  },
+
+  "role_definitions": {
+    "O": {
+      "name": "Optimist",
+      "mandate": "Identify 2–3 strong opportunity angles. Focus on tailwinds, market gaps, underserved demand. Be specific to the geography and constraints provided.",
+      "constraints": "Must not ignore feasibility entirely. Must ground at least one point in a real local market signal.",
+      "output_length": "150–250 words"
+    },
+    "P": {
+      "name": "Pragmatist",
+      "mandate": "Ground every idea from O in real numbers — budget, timeline, staffing, cashflow. State what is achievable and what is not within the given constraints.",
+      "constraints": "Must respond to at least 2 specific claims made by O. No vague ranges — give actual numbers.",
+      "output_length": "150–250 words"
+    },
+    "C": {
+      "name": "Critic",
+      "mandate": "Stress-test assumptions. Surface the single most dangerous flaw in each idea discussed so far. Prevent groupthink.",
+      "constraints": "Must challenge at least one claim from BOTH O and P. Must not propose alternatives — only identify risks and flaws.",
+      "output_length": "150–250 words"
+    },
+    "Pr": {
+      "name": "Practitioner",
+      "mandate": "Bring on-ground execution intelligence. Respond directly to the Critic's risks with concrete operational fixes — vendor names, hiring approaches, process workarounds.",
+      "constraints": "Must address at least 2 of the Critic's specific objections. No theory — only executable actions.",
+      "output_length": "150–250 words"
+    },
+    "I": {
+      "name": "Innovator",
+      "mandate": "Introduce hybrid models, tech overlays, or non-obvious differentiators that the other roles missed. Propose at least one idea that combines two existing threads in a novel way.",
+      "constraints": "Must build on — not replace — at least one idea already on the table. Must be implementable within the stated budget.",
+      "output_length": "150–250 words"
+    },
+    "S": {
+      "name": "Summarizer",
+      "mandate": "Synthesize all prior contributions. Select the top 2 actionable paths. Produce a structured verdict and a step-by-step roadmap.",
+      "constraints": "Must reference at least one insight from each of the 5 prior roles. Must not introduce new ideas — only synthesize.",
+      "output_format": {
+        "top_2_models": [
+          {
+            "rank": 1,
+            "name": "Model name",
+            "reasoning": "Why this won — reference specific prior council inputs",
+            "revenue_model": "e.g. 10 clients × ₹9,000 = ₹90,000/month",
+            "net_margin": "₹X – ₹Y",
+            "key_risk": "Single biggest remaining risk",
+            "risk_mitigation": "How to address it"
+          },
+          {
+            "rank": 2,
+            "name": "Model name",
+            "reasoning": "Why this is runner-up",
+            "revenue_model": "...",
+            "net_margin": "...",
+            "key_risk": "...",
+            "risk_mitigation": "..."
+          }
+        ],
+        "eliminated_models": [
+          {
+            "name": "Model name",
+            "reason_eliminated": "One sentence — which Critic/Pragmatist objection killed it"
+          }
+        ],
+        "roadmap": [
+          { "step": 1, "title": "Step title", "timing": "Day/Week/Month X", "action": "Specific action" },
+          { "step": 2, "title": "Step title", "timing": "...", "action": "..." },
+          { "step": 3, "title": "Step title", "timing": "...", "action": "..." },
+          { "step": 4, "title": "Step title", "timing": "...", "action": "..." },
+          { "step": 5, "title": "Step title", "timing": "...", "action": "..." }
+        ]
+      }
+    }
+  },
+
+  "round_progression_rules": {
+    "how_rounds_work": "Each round runs all 6 roles in sequence: O → P → C → Pr → I → S. The Summarizer closes each round. A new round begins only after S has completed.",
+    "when_to_run_round_2": "Run Round 2 when: (a) the human explicitly requests it, OR (b) the Summarizer flags 'confidence: low' in its verdict, OR (c) a new constraint is introduced after Round 1.",
+    "round_2_instruction": "In Round 2, all roles must read Round 1 contributions before responding. Each role must either reinforce, refine, or directly rebut a specific Round 1 claim — no fresh starts.",
+    "max_rounds": 3,
+    "carry_forward_rule": "All prior round contributions are visible to all roles in subsequent rounds. The Summarizer in the final round must synthesize across ALL rounds, not just the latest."
+  },
+
+  "session_state": {
+    "next_action": "EXECUTE_ROLE",
+    "next_role": "O",
+    "next_round": 1,
+    "instruction_to_llm": "Read problem_statement. Read role_definitions for role 'O'. Write O's contribution following its mandate, constraints, and output_length. Then return the COMPLETE updated JSON with discussion_log.round_1.O filled in, session_state updated to next_role='P' and total_llm_passes_completed incremented by 1.",
+    "resume_instruction": "If receiving this JSON mid-session, read session_state.next_action and session_state.next_role. Ignore all null fields. Read all non-null prior contributions for context. Then execute the next role only."
+  },
+
+  "discussion_log": {
+    "round_1": {
+      "status": "pending",
+      "contributions": {
+        "O": null,
+        "P": null,
+        "C": null,
+        "Pr": null,
+        "I": null,
+        "S": null
+      }
+    }
+  },
+
+  "output_contract": {
+    "rule": "The LLM must always return the FULL updated JSON — not just the contribution.",
+    "after_each_role": "Fill the relevant contribution field. Update session_state.next_role to the next in sequence. Increment total_llm_passes_completed by 1.",
+    "after_summarizer": "Set discussion_log.roundN.status to 'complete'. If another round is needed, add discussion_log.round_2 block with all contributions set to null. Update session_state accordingly.",
+    "never_do": [
+      "Do not return only the contribution text",
+      "Do not skip a role",
+      "Do not let Summarizer introduce new ideas",
+      "Do not let Critic propose solutions",
+      "Do not fabricate a completed round — only fill what you were asked to execute"
+    ]
+  }
+}
