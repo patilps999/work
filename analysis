@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic AI in Indian Lending — Practitioner Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16212E;--ink2:#33414F;--muted:#6B7785;--paper:#F4F5F6;--card:#FFF;--line:#DDE2E7;--line2:#E9ECEF;--accent:#B26B2E;--accent-soft:#F3E7D8;
+--c0:#8C8574;--c1:#6E8CA6;--c2:#3D6699;--c3:#3E8A6B;--c4:#7B5AA6;--build:#2c6a4d;--split:#8a6a15;--wait:#a2542f;
+--fd:'Space Grotesk',system-ui,sans-serif;--fb:'Newsreader',Georgia,serif;--fm:'IBM Plex Mono',monospace;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:17.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:600;letter-spacing:-.02em;line-height:1.08;color:var(--ink)}
+.wrap{display:grid;grid-template-columns:268px minmax(0,1fr);max-width:1300px;margin:0 auto}
+.side{position:sticky;top:0;height:100vh;overflow-y:auto;padding:32px 24px;border-right:1px solid var(--line);background:var(--paper)}
+.brand{font-family:var(--fd);font-weight:700;font-size:15px;line-height:1.25}.brand b{color:var(--accent)}
+.brand-sub{font-family:var(--fm);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:2px 0 22px}
+nav.toc{margin-bottom:24px}
+nav.toc a{display:flex;gap:10px;align-items:baseline;padding:6px 0;color:var(--ink2);font-family:var(--fd);font-size:13.5px;font-weight:500}
+nav.toc a .n{font-family:var(--fm);font-size:10.5px;color:var(--muted);min-width:20px}
+nav.toc a:hover{color:var(--ink);text-decoration:none}
+nav.toc a.active,nav.toc a.active .n{color:var(--accent)}
+.keybox{border-top:1px solid var(--line);padding-top:16px}
+.keybox h4{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
+.keyrow{display:flex;gap:9px;align-items:flex-start;margin-bottom:10px}
+.keyrow div{font-size:12px;line-height:1.3;color:var(--ink2);font-family:var(--fd)}
+.keyrow div span{display:block;color:var(--muted);font-size:10.5px}
+.chip{display:inline-block;font-family:var(--fm);font-size:11px;font-weight:600;padding:2px 7px;border-radius:5px;color:#fff;white-space:nowrap}
+.chip-C0{background:var(--c0)}.chip-C1{background:var(--c1)}.chip-C2{background:var(--c2)}.chip-C3{background:var(--c3)}.chip-C4{background:var(--c4)}.chip-multi{background:#5b6673}
+.mat{display:inline-block;font-family:var(--fm);font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:20px;border:1px solid;white-space:nowrap}
+.mat-production{color:#2c6a4d;border-color:#bfe0cd;background:#eaf5ef}.mat-piloted{color:#8a6a15;border-color:#ecd9a8;background:#fbf3df}
+.mat-claimed{color:#a23b32;border-color:#e6c3bf;background:#f8ebe9}.mat-widespread{color:#4a5560;border-color:#d7dde2;background:#eef1f3}
+main{padding:0 clamp(20px,4.5vw,64px) 110px;min-width:0}
+section{padding-top:66px;scroll-margin-top:16px}
+.sec-head{display:flex;align-items:baseline;gap:13px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.sec-head .num{font-family:var(--fm);font-size:12.5px;color:var(--accent);font-weight:600}
+.sec-head h2{font-size:clamp(1.5rem,3vw,2rem);margin:0}
+p.lede{font-size:1.1rem;color:var(--ink2);margin:0 0 18px;max-width:74ch}
+main p{max-width:72ch}
+.small{font-family:var(--fm);font-size:11px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+.hero{padding-top:46px}
+.hero .eyebrow{font-family:var(--fm);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3.7rem);margin:0 0 18px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:1.18rem;color:var(--ink2);max-width:66ch;margin:0 0 30px}
+.spectrum{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:28px 0 20px}
+.seg{background:var(--card);border:1px solid var(--line);border-top:3px solid;border-radius:9px;padding:13px 13px 11px}
+.seg-c0{border-top-color:var(--c0)}.seg-c1{border-top-color:var(--c1)}.seg-c2{border-top-color:var(--c2)}.seg-c3{border-top-color:var(--c3)}.seg-c4{border-top-color:var(--c4)}
+.seg-code{font-family:var(--fm);font-weight:600;font-size:12.5px}
+.seg-c0 .seg-code,.seg-c0 .seg-band{color:var(--c0)}.seg-c1 .seg-code,.seg-c1 .seg-band{color:var(--c1)}.seg-c2 .seg-code,.seg-c2 .seg-band{color:var(--c2)}.seg-c3 .seg-code,.seg-c3 .seg-band{color:var(--c3)}.seg-c4 .seg-code,.seg-c4 .seg-band{color:var(--c4)}
+.seg-name{display:block;font-family:var(--fd);font-weight:600;font-size:14.5px;margin-top:3px}
+.seg-sub{display:block;font-size:11.5px;color:var(--muted);margin-top:2px;font-family:var(--fd)}
+.seg-band{display:block;font-family:var(--fm);font-size:9px;letter-spacing:.08em;text-transform:uppercase;margin-top:10px;padding-top:8px;border-top:1px solid var(--line2)}
+.spec-axis{display:flex;justify-content:space-between;font-family:var(--fm);font-size:10.5px;color:var(--muted);margin-bottom:30px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--fm);font-size:11.5px;color:var(--ink2);border-top:1px solid var(--line);padding-top:18px}
+.hero-meta b{color:var(--accent)}
+.leg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:12px;margin-top:6px}
+.leg{background:var(--card);border:1px solid var(--line);border-left:4px solid;border-radius:10px;padding:16px}
+.leg-c0{border-left-color:var(--c0)}.leg-c1{border-left-color:var(--c1)}.leg-c2{border-left-color:var(--c2)}.leg-c3{border-left-color:var(--c3)}.leg-c4{border-left-color:var(--c4)}
+.leg-c0 .leg-code,.leg-c0 .leg-ag{color:var(--c0)}.leg-c1 .leg-code,.leg-c1 .leg-ag{color:var(--c1)}.leg-c2 .leg-code,.leg-c2 .leg-ag{color:var(--c2)}.leg-c3 .leg-code,.leg-c3 .leg-ag{color:var(--c3)}.leg-c4 .leg-code,.leg-c4 .leg-ag{color:var(--c4)}
+.leg-top{display:flex;gap:11px;align-items:flex-start;margin-bottom:10px}
+.leg-code{font-family:var(--fm);font-weight:700;font-size:19px;line-height:1}
+.leg-top h3{font-size:16px;margin:0}
+.leg-era{font-family:var(--fm);font-size:10.5px;color:var(--muted);margin:3px 0 0}
+.leg-what{font-size:14px;color:var(--ink2);margin:0 0 10px;line-height:1.45}
+.leg-tell{font-size:13.5px;color:var(--ink);margin:0 0 10px;line-height:1.42;background:var(--paper);padding:9px 11px;border-radius:7px}
+.leg-tell .lbl{display:block;font-family:var(--fm);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.leg-ag{font-family:var(--fd);font-weight:600;font-size:13px;margin:0}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card);margin-top:6px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+thead th{font-family:var(--fm);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);font-weight:600;background:#fbfbfc}
+tbody td{padding:13px 15px;border-bottom:1px solid var(--line2);vertical-align:top;font-family:var(--fd);line-height:1.4}
+tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fafbfc}
+.eyebrow{display:block;font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.uc{display:block;font-weight:600;font-size:14px;color:var(--ink)}
+.what{display:block;font-size:12px;color:var(--muted);margin-top:2px;line-height:1.35}
+.c-uc{min-width:205px}.c-verdict{font-size:12.5px;color:var(--ink2);min-width:180px}
+.c-verdict.verdict-c4{color:var(--c4);font-weight:600}
+.c-rbi{font-size:12px;color:var(--ink2);min-width:160px}
+.mat-note{display:block;font-family:var(--fm);font-size:10px;color:var(--muted);margin-top:4px}
+.filters{display:flex;flex-wrap:wrap;gap:16px;margin:4px 0 14px;align-items:center}
+.fgroup{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.fgroup .flabel{font-family:var(--fm);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.fbtn{font-family:var(--fm);font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer;transition:all .14s ease}
+.fbtn:hover{border-color:var(--ink2);color:var(--ink)}
+.fbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.fbtn[data-class="C0"].on{background:var(--c0);border-color:var(--c0)}.fbtn[data-class="C1"].on{background:var(--c1);border-color:var(--c1)}
+.fbtn[data-class="C2"].on{background:var(--c2);border-color:var(--c2)}.fbtn[data-class="C3"].on{background:var(--c3);border-color:var(--c3)}
+.fbtn[data-class="C4"].on{background:var(--c4);border-color:var(--c4)}
+.count{font-family:var(--fm);font-size:11px;color:var(--muted);margin-left:auto}
+tr.hide{display:none}
+.callout{background:var(--ink);color:#e8ecf0;border-radius:14px;padding:24px 28px;margin:22px 0}
+.callout h3{color:#fff;font-size:18px;margin:0 0 10px}
+.callout p{color:#c3ccd4;max-width:none;margin:0 0 8px;font-size:15px}
+.callout .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:14px;margin-top:16px;border-top:1px solid #2a3947;padding-top:16px}
+.callout .stat b{font-family:var(--fd);font-size:24px;color:#fff;display:block}
+.callout .stat span{font-size:11.5px;color:#9aa7b2;line-height:1.3;display:block;margin-top:2px}
+.firm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px;margin-top:6px}
+.firm{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:18px}
+.firm h3{font-size:15.5px;margin:0 0 8px;color:var(--accent)}
+.firm p{font-size:13.5px;color:var(--ink2);margin:0;max-width:none;line-height:1.48}
+.consensus{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 22px;margin:6px 0 18px}
+.consensus ul{margin:0;padding:0}
+.consensus li{padding:11px 0;border-bottom:1px solid var(--line2);list-style:none;font-size:14.5px;color:var(--ink2)}
+.consensus li:last-child{border-bottom:0}
+.consensus li b{color:var(--ink);font-family:var(--fd);font-weight:600}
+.dv-claim{font-family:var(--fd);font-weight:600;color:var(--ink);width:35%}
+.dv-real{color:var(--ink2);font-size:13.5px}
+.ml-say{font-family:var(--fd);font-weight:600;color:var(--ink)}.ml-why{color:var(--ink2);font-size:13px}
+.verdict-band{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 20px}
+.vcard{border-radius:12px;padding:20px 22px}
+.vcard.good{background:#eef5f0;border:1px solid #cfe4d6}.vcard.bad{background:#f6eeea;border:1px solid #e6d3c8}
+.vcard h3{font-size:15.5px;margin:0 0 8px}.vcard.good h3{color:#2c6a4d}.vcard.bad h3{color:#a2542f}
+.vcard p{font-size:14px;color:var(--ink2);margin:0;max-width:none}
+.bn{font-family:var(--fm);color:var(--muted);font-size:12.5px;width:22px}
+.bc{min-width:215px}.bv{font-size:12.5px;color:var(--ink2);min-width:180px}
+.flag{background:var(--accent-soft);border:1px solid #e6d3b8;border-radius:12px;padding:18px 22px;margin:20px 0}
+.flag h3{font-size:14.5px;margin:0 0 8px;color:#8a5316}
+.flag ul{margin:0;padding-left:18px;color:var(--ink2);font-size:14px}
+.flag li{margin-bottom:6px}
+.assume{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:14px 18px;margin:0 0 18px}
+.assume h4{margin:0 0 6px;font-size:10.5px;font-family:var(--fm);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.assume p{margin:0;font-size:14px;color:var(--ink2);max-width:none}
+.vbadge{display:inline-block;font-family:var(--fm);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;white-space:nowrap;line-height:1.2}
+.v-build{background:#eaf5ef;color:var(--build);border:1px solid #bfe0cd}
+.v-split{background:#fbf3df;color:var(--split);border:1px solid #ecd9a8}
+.v-wait{background:#f8ebe9;color:var(--wait);border:1px solid #e6c3bf}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px;margin:8px 0 20px}
+.sm{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;border-top:3px solid}
+.sm-build{border-top-color:var(--build)}.sm-split{border-top-color:var(--split)}.sm-wait{border-top-color:var(--wait)}
+.sm-v{font-family:var(--fm);font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.sm-build .sm-v{color:var(--build)}.sm-split .sm-v{color:var(--split)}.sm-wait .sm-v{color:var(--wait)}
+.sm-n{display:block;font-family:var(--fd);font-weight:600;font-size:13.5px;margin-top:5px;line-height:1.25;color:var(--ink)}
+.crit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 22px}
+.crit{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;gap:12px}
+.crit-n{font-family:var(--fm);font-size:12.5px;font-weight:600;color:var(--accent)}
+.crit h4{margin:0 0 4px;font-size:14.5px}
+.crit p{margin:0;font-size:13px;color:var(--ink2);line-height:1.42;max-width:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:16px;scroll-margin-top:16px}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.card-title h3{font-size:19px;margin:0 0 4px}
+.csub{margin:0;font-size:13.5px;color:var(--muted);max-width:60ch;line-height:1.4}
+.card-meta{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:13px 0 4px}
+.mtag{font-family:var(--fm);font-size:10.5px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:2px 9px}
+.mtag-cost{color:var(--ink);background:var(--paper);border-color:#cfd6dc;font-weight:600}
+.gauge{margin:14px 0 18px}
+.track{position:relative;height:42px;background:linear-gradient(90deg,#f8ebe9,#fbf3df 45%,#eef6f1);border:1px solid var(--line);border-radius:10px}
+.track .stop{position:absolute;top:50%;transform:translate(-50%,-50%);font-family:var(--fm);font-size:10px;color:#9098a1;pointer-events:none}
+.fill{position:absolute;top:0;bottom:0;left:0;border-radius:10px 0 0 10px;opacity:.14}
+.fill-build{background:var(--build)}.fill-split{background:var(--split)}.fill-wait{background:var(--wait)}
+.dot{position:absolute;top:50%;width:15px;height:15px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid #fff;box-shadow:0 2px 8px rgba(20,33,46,.3);z-index:2}
+.dot-build{background:var(--build)}.dot-split{background:var(--split)}.dot-wait{background:var(--wait)}
+.fw{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0 16px}
+.fw-col{border-radius:10px;padding:13px 15px}
+.fw-build{background:#f1f7f3;border:1px solid #d8e8de}.fw-wait{background:#f8f1ee;border:1px solid #ecdcd4}
+.fw-col h4{margin:0 0 7px;font-size:11px;font-family:var(--fm);letter-spacing:.06em;text-transform:uppercase}
+.fw-build h4{color:var(--build)}.fw-wait h4{color:var(--wait)}
+.fw-col ul{margin:0;padding-left:15px}
+.fw-col li{font-size:13px;color:var(--ink2);line-height:1.42;margin-bottom:7px}
+.fw-col li:last-child{margin-bottom:0}
+.hfs{background:var(--ink);border-radius:11px;padding:16px 20px;color:#dbe2e8}
+.hfs-lbl{font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hfs p{margin:7px 0 0;color:#e8ecf0;font-size:14.5px;line-height:1.48;max-width:none}
+.hfs strong{color:#fff}.hfs em{color:#f0d9bd;font-style:normal}
+.moves{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;border-top:1px solid #2a3947;padding-top:12px}
+.moves .mv{display:block;font-family:var(--fm);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#8fa0ad;margin-bottom:3px}
+.moves div{font-size:12.5px;color:#cdd5dd;line-height:1.4}
+.mx-uc{font-weight:600;color:var(--ink);min-width:175px}.mx-econ,.mx-move{color:var(--ink2);font-size:12px}
+/* vendors */
+.vd-layer{font-family:var(--fd);font-weight:600;color:var(--ink);min-width:170px}
+.vd-names{font-family:var(--fm);font-size:12px;color:var(--ink2);min-width:200px}
+.vd-note{font-size:12.5px;color:var(--ink2);min-width:220px}
+/* diligence */
+.dil{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 26px;counter-reset:q}
+.dil li{list-style:none;counter-increment:q;padding:12px 0 12px 38px;border-bottom:1px solid var(--line2);font-size:14.5px;color:var(--ink);position:relative;font-family:var(--fd)}
+.dil li:last-child{border-bottom:0}
+.dil li::before{content:counter(q,decimal-leading-zero);position:absolute;left:0;top:12px;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--accent)}
+/* roadmap */
+.road{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-top:14px}
+.road-head{display:flex;align-items:baseline;gap:12px;margin-bottom:10px}
+.road-q{font-family:var(--fm);font-size:11px;font-weight:600;color:#fff;background:var(--accent);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.road h3{font-size:16px;margin:0}
+.road ul{margin:0;padding-left:18px}
+.road li{font-size:14px;color:var(--ink2);line-height:1.5;margin-bottom:6px}
+/* free-ai */
+.fa-item{font-family:var(--fd);font-weight:600;color:var(--ink)}
+.fa-ev{font-size:12.5px;color:var(--ink2)}
+.fa-own{font-family:var(--fm);font-size:11.5px;color:var(--muted);white-space:nowrap}
+.bl{background:var(--ink);color:#e8ecf0;border-radius:16px;padding:30px 34px;margin-top:6px}
+.bl h2{color:#fff}.bl p{color:#c8d0d8;max-width:72ch;font-size:15.5px}.bl strong{color:#fff}
+.bl .kicker{font-family:var(--fm);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.src{font-family:var(--fm);font-size:12px;color:var(--muted);line-height:1.8}
+footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--fm);font-size:10.5px;color:var(--muted);line-height:1.7}
+.mtop{display:none}
+@media(max-width:1000px){
+ .wrap{grid-template-columns:1fr}.side{display:none}
+ .mtop{display:flex;position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);padding:11px 16px;gap:13px;align-items:center;overflow-x:auto;white-space:nowrap}
+ .mtop .brand{margin:0;font-size:12.5px}
+ .mtop a{font-family:var(--fd);font-size:12.5px;color:var(--ink2);font-weight:500}
+ main{padding:0 18px 84px}
+ .spectrum{grid-template-columns:repeat(2,1fr)}
+ .verdict-band,.crit-grid,.fw{grid-template-columns:1fr}
+ .moves{grid-template-columns:1fr}
+ .card-head{flex-direction:column}
+ body{font-size:16px}
+}
+@media(max-width:520px){.spectrum{grid-template-columns:1fr}}
+</style></head><body>
+<div class="mtop"><span class="brand">Fin<b>AI</b> Dossier</span><a href="#cat">Catalogue</a><a href="#bajaj">Bajaj</a><a href="#buildwait">Build/Wait</a><a href="#vendors">Vendors</a><a href="#roadmap">Roadmap</a><a href="#freeai">FREE-AI</a></div>
+<div class="wrap">
+<aside class="side">
+ <div class="brand">Agentic AI in<br>Indian Lending</div>
+ <div class="brand-sub">Practitioner Dossier · Jul 2026</div>
+ <nav class="toc"><a href="#q"><span class="n">01</span>Thesis & classes</a>
+<a href="#cat"><span class="n">02</span>Use-case catalogue</a>
+<a href="#mislabel"><span class="n">03</span>Mislabel watchlist</a>
+<a href="#firms"><span class="n">04</span>Advisory-firm view</a>
+<a href="#bajaj"><span class="n">05</span>Bajaj FINAI teardown</a>
+<a href="#buildwait"><span class="n">06</span>Build vs wait · HFS</a>
+<a href="#vendors"><span class="n">07</span>Vendor landscape</a>
+<a href="#diligence"><span class="n">08</span>Vendor diligence script</a>
+<a href="#roadmap"><span class="n">09</span>12-month roadmap</a>
+<a href="#freeai"><span class="n">10</span>FREE-AI checklist</a>
+<a href="#bottom"><span class="n">11</span>Bottom line</a>
+<a href="#sources"><span class="n">•</span>Sources</a></nav>
+ <div class="keybox"><h4>Classification key</h4><div class="keyrow"><span class="chip chip-C0">C0</span><div>Deterministic<span>Rules · RPA · APIs</span></div></div>
+<div class="keyrow"><span class="chip chip-C1">C1</span><div>OCR / IDP<span>Document extraction</span></div></div>
+<div class="keyrow"><span class="chip chip-C2">C2</span><div>Predictive ML<span>Scorecards · anomaly</span></div></div>
+<div class="keyrow"><span class="chip chip-C3">C3</span><div>Generative AI<span>LLM · one-shot</span></div></div>
+<div class="keyrow"><span class="chip chip-C4">C4</span><div>Agentic AI<span>Plans · acts · chains</span></div></div></div>
+</aside>
+<main>
+ <header class="hero" id="top">
+  <div class="eyebrow">Banks &amp; NBFCs · classification → decision → execution</div>
+  <h1>From plumbing to <em>genuine agents</em></h1>
+  <p class="sub">What’s actually deployed in Indian lending AI, what’s relabelled plumbing, and exactly what to do about it — with vendors, costs, a 12-month sequence, and the RBI checklist that gates all of it.</p>
+  <div class="spectrum"><div class="seg seg-c0"><span class="seg-code">C0</span><span class="seg-name">Deterministic</span><span class="seg-sub">Rules · RPA · APIs</span><span class="seg-band">Not AI</span></div>
+<div class="seg seg-c1"><span class="seg-code">C1</span><span class="seg-name">OCR / IDP</span><span class="seg-sub">Document extraction</span><span class="seg-band">Extraction</span></div>
+<div class="seg seg-c2"><span class="seg-code">C2</span><span class="seg-name">Predictive ML</span><span class="seg-sub">Scorecards · anomaly</span><span class="seg-band">Old AI</span></div>
+<div class="seg seg-c3"><span class="seg-code">C3</span><span class="seg-name">Generative AI</span><span class="seg-sub">LLM · one-shot</span><span class="seg-band">New AI</span></div>
+<div class="seg seg-c4"><span class="seg-code">C4</span><span class="seg-name">Agentic AI</span><span class="seg-sub">Plans · acts · chains</span><span class="seg-band">Genuinely new</span></div></div>
+  <div class="spec-axis"><span>◄ not AI at all</span><span>genuinely new ►</span></div>
+  <div class="hero-meta">
+   <span><b>46</b> use cases classified</span><span><b>5</b> agentic bets with cost anchors</span>
+   <span><b>6</b> vendor layers mapped</span><span><b>10</b> diligence questions · <b>10</b> FREE-AI items</span>
+  </div>
+ </header>
+
+ <section id="q">
+  <div class="sec-head"><span class="num">01</span><h2>Thesis &amp; the five classes</h2></div>
+  <p class="lede">Agentic AI has spread across the origination pipeline and the collections/portfolio layer, but the credit-approval decision stays human-gated — because RBI’s explainability-and-accountability regime makes a black-box decision a compliance liability, not because the technology is missing. Fully autonomous lending exists only in small-ticket digital-native books (Trust Paisa) where a wrong call costs little.</p>
+  <p>Everything in this dossier is sorted onto one spectrum, C0–C4, naming what each thing actually is regardless of the press release. Most published “AI use cases” are C0–C2; the honestly-agentic band is five use cases wide.</p>
+  <div class="leg-grid"><article class="leg leg-c0"><div class="leg-top"><span class="leg-code">C0</span><div><h3>Deterministic automation</h3><p class="leg-era">1995–2010</p></div></div><p class="leg-what">Rule engines, RPA, API integration. No model, no learning.</p><p class="leg-tell"><span class="lbl">The tell</span>Drawable as a flowchart. CIBIL/GST pulls, penny-drop, CKYC, dedupe.</p><p class="leg-ag">Not AI at all</p></article>
+<article class="leg leg-c1"><div class="leg-top"><span class="leg-code">C1</span><div><h3>Classical OCR / IDP</h3><p class="leg-era">OCR 20+ yrs; IDP ~2017</p></div></div><p class="leg-what">Template/zone OCR + ML extraction. Image → fields.</p><p class="leg-tell"><span class="lbl">The tell</span>Reads and extracts; does not reason. “AI KYC” usually sits here.</p><p class="leg-ag">Extraction, not agency</p></article>
+<article class="leg leg-c2"><div class="leg-top"><span class="leg-code">C2</span><div><h3>Classical / predictive ML</h3><p class="leg-era">Scorecards 30+ yrs; ML ~2015</p></div></div><p class="leg-what">Scorecards, gradient boosting, anomaly, propensity. Narrow, single-task.</p><p class="leg-tell"><span class="lbl">The tell</span>Outputs a number or class. Predicts; does not converse or plan.</p><p class="leg-ag">Real AI — the OLD AI</p></article>
+<article class="leg leg-c3"><div class="leg-top"><span class="leg-code">C3</span><div><h3>Generative AI (non-agentic)</h3><p class="leg-era">2023+</p></div></div><p class="leg-what">LLM doing ONE task a human triggers and consumes.</p><p class="leg-tell"><span class="lbl">The tell</span>Human presses go, human uses output. No self-directed action.</p><p class="leg-ag">New, but not agentic</p></article>
+<article class="leg leg-c4"><div class="leg-top"><span class="leg-code">C4</span><div><h3>Agentic AI</h3><p class="leg-era">2024+ (nascent)</p></div></div><p class="leg-what">LLM + planning + tools + memory. Plans, calls APIs, loops, executes.</p><p class="leg-tell"><span class="lbl">The tell</span>Decides what to do next and does it, across a file or portfolio.</p><p class="leg-ag">Yes — the orchestration only</p></article></div>
+ </section>
+
+ <section id="cat">
+  <div class="sec-head"><span class="num">02</span><h2>Use-case catalogue</h2></div>
+  <p class="lede">46 use cases across the lifecycle: honest class, Indian maturity with named NBFCs, and the RBI constraint that bites. Filter to C4 to see the genuinely agentic band — five rows, mostly co-pilot, all on Highest constraints except portfolio monitoring.</p>
+  <div class="filters">
+   <div class="fgroup"><span class="flabel">Class</span>
+    <button class="fbtn on" data-group="class" data-class="all">All</button><button class="fbtn" data-group="class" data-class="C0">C0</button>
+    <button class="fbtn" data-group="class" data-class="C1">C1</button><button class="fbtn" data-group="class" data-class="C2">C2</button>
+    <button class="fbtn" data-group="class" data-class="C3">C3</button><button class="fbtn" data-group="class" data-class="C4">C4</button></div>
+   <div class="fgroup"><span class="flabel">Maturity</span>
+    <button class="fbtn on" data-group="mat" data-mat="all">All</button><button class="fbtn" data-group="mat" data-mat="production">In production</button>
+    <button class="fbtn" data-group="mat" data-mat="piloted">Piloted</button><button class="fbtn" data-group="mat" data-mat="claimed">Claimed</button>
+    <button class="fbtn" data-group="mat" data-mat="widespread">Widespread</button></div>
+   <span class="count" id="cat-count">46 of 46 use cases</span>
+  </div>
+  <div class="tablewrap"><table>
+   <thead><tr><th>Use case</th><th>Class</th><th>Indian maturity</th><th>RBI constraint</th><th>Really agentic?</th></tr></thead>
+   <tbody id="cat-body"><tr data-class="C2" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Lead &amp; sourcing</span><span class="uc">Lead scoring / propensity</span><span class="what">Ranks leads by conversion likelihood</span></td><td><span class="chip chip-C2">C2</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">Low — DPDP consent</td><td class="c-verdict">Predictive ML. Pre-dates GenAI.</td></tr>
+<tr data-class="C2" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Lead &amp; sourcing</span><span class="uc">Next-best-offer sizing</span><span class="what">Propensity + eligibility; LLM copy</span></td><td><span class="chip chip-multi">C2 (+C3)</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread — e.g. Bajaj NBO</span></td><td class="c-rbi">Low–Med — fairness if it gates offers</td><td class="c-verdict">C2 core; C3 only for message text.</td></tr>
+<tr data-class="C3" data-mat="production"><td class="c-uc"><span class="eyebrow">Lead &amp; sourcing</span><span class="uc">Conversational sales agent</span><span class="what">NLU + scripted flows; CRM updates</span></td><td><span class="chip chip-multi">C3 (+C0)</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — Bajaj</span></td><td class="c-rbi">Med — mis-selling; disclose AI</td><td class="c-verdict">Agentic only if it acts across CRM/dialer.</td></tr>
+<tr data-class="C1" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Onboarding / KYC</span><span class="uc">KYC document extraction</span><span class="what">OCR reads PAN, Aadhaar, cheque</span></td><td><span class="chip chip-C1">C1</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">Low — accuracy + DPDP</td><td class="c-verdict">Classical extraction.</td></tr>
+<tr data-class="C2" data-mat="production"><td class="c-uc"><span class="eyebrow">Onboarding / KYC</span><span class="uc">Face match / liveness / V-KYC</span><span class="what">CV biometric match + liveness</span></td><td><span class="chip chip-multi">C2 (CV)</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — Bajaj</span></td><td class="c-rbi">Med — biometric consent; bias</td><td class="c-verdict">Narrow CV model.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Onboarding / KYC</span><span class="uc">CKYC / Aadhaar / PAN validation</span><span class="what">Govt/bureau API calls</span></td><td><span class="chip chip-C0">C0</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">Low — not a model</td><td class="c-verdict">NOT AI. API integration.</td></tr>
+<tr data-class="C2" data-mat="production"><td class="c-uc"><span class="eyebrow">Onboarding / KYC</span><span class="uc">Document tamper detection</span><span class="what">CV/rules flag edited docs</span></td><td><span class="chip chip-multi">C2 (+C0)</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production (common)</span></td><td class="c-rbi">Med — audit trail on flags</td><td class="c-verdict">Narrow CV / rules.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Data &amp; verification</span><span class="uc">Account Aggregator pull</span><span class="what">Consent-based API fetch</span></td><td><span class="chip chip-C0">C0</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (post-AA)</span></td><td class="c-rbi">Low — AA/DPDP consent</td><td class="c-verdict">NOT AI. Plumbing.</td></tr>
+<tr data-class="C1" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Data &amp; verification</span><span class="uc">Bank statement analysis</span><span class="what">Extract, categorise, cashflow</span></td><td><span class="chip chip-multi">C1 (+C2)</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (Perfios-type)</span></td><td class="c-rbi">Med — feeds the decision</td><td class="c-verdict">IDP + ML. Core is old.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Data &amp; verification</span><span class="uc">GST / ITR / MCA parse</span><span class="what">Pull filings, extract fields</span></td><td><span class="chip chip-multi">C0 (+C1)</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread</span></td><td class="c-rbi">Low — consent on filings</td><td class="c-verdict">Integration + extraction.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Data &amp; verification</span><span class="uc">Penny-drop verification</span><span class="what">Micro-credit + name-match API</span></td><td><span class="chip chip-C0">C0</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">Low — not AI</td><td class="c-verdict">NOT AI.</td></tr>
+<tr data-class="C2" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Underwriting</span><span class="uc">Credit risk scorecard (PD/LGD)</span><span class="what">Statistical/ML risk grade</span></td><td><span class="chip chip-C2">C2</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">High — reason codes + bias testing</td><td class="c-verdict">Classical ML. Core of the decision.</td></tr>
+<tr data-class="C2" data-mat="production"><td class="c-uc"><span class="eyebrow">Underwriting</span><span class="uc">Alt-data thin-file scoring</span><span class="what">Same ML, richer features</span></td><td><span class="chip chip-C2">C2</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production (fintechs+NBFCs)</span></td><td class="c-rbi">High — fairness; explainability</td><td class="c-verdict">Fancier features, same class.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Underwriting</span><span class="uc">Business rule engine</span><span class="what">Hard-coded policy gates</span></td><td><span class="chip chip-C0">C0</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">High — auto-decline needs reason codes</td><td class="c-verdict">Rules. The &#x27;auto-decision&#x27; is deterministic.</td></tr>
+<tr data-class="C1" data-mat="production"><td class="c-uc"><span class="eyebrow">Underwriting</span><span class="uc">Automated financial spreading</span><span class="what">Auto-build financials</span></td><td><span class="chip chip-multi">C1 + C2</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production (LOS vendors)</span></td><td class="c-rbi">Med — accuracy + audit</td><td class="c-verdict">C4 only when an agent runs the chain.</td></tr>
+<tr data-class="C0" data-mat="production"><td class="c-uc"><span class="eyebrow">Underwriting</span><span class="uc">Straight-through processing</span><span class="what">Score + rules auto-approve</span></td><td><span class="chip chip-multi">C0 + C2</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — Trust Paisa</span></td><td class="c-rbi">Highest — RE accountable; recourse</td><td class="c-verdict">Autonomy ≠ agentic. STP on a scorecard.</td></tr>
+<tr data-class="C4" data-mat="production"><td class="c-uc"><span class="eyebrow">Underwriting</span><span class="uc">Agentic underwriting co-pilot</span><span class="what">Ingest→bureau→spread→memo→route</span></td><td><span class="chip chip-C4">C4</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — L&amp;T Helios, Tata</span></td><td class="c-rbi">Highest — logs + human sign-off</td><td class="c-verdict verdict-c4">YES (orchestration). Decision math C0+C2.</td></tr>
+<tr data-class="C3" data-mat="piloted"><td class="c-uc"><span class="eyebrow">Underwriting</span><span class="uc">LLM narrative risk assessment</span><span class="what">LLM writes risk narrative</span></td><td><span class="chip chip-multi">C3 (→C4)</span></td><td class="c-mat"><span class="mat mat-piloted">Piloted</span><span class="mat-note">Piloted — Tata</span></td><td class="c-rbi">High — hallucination; validation</td><td class="c-verdict">C4 only if it sources its own evidence.</td></tr>
+<tr data-class="C3" data-mat="production"><td class="c-uc"><span class="eyebrow">Sanction &amp; docs</span><span class="uc">Credit memo / CAM generation</span><span class="what">LLM drafts appraisal memo</span></td><td><span class="chip chip-multi">C3 (→C4)</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — Tata Capital</span></td><td class="c-rbi">Med — human review</td><td class="c-verdict">Agentic only if it self-assembles inputs.</td></tr>
+<tr data-class="C3" data-mat="production"><td class="c-uc"><span class="eyebrow">Sanction &amp; docs</span><span class="uc">Sanction letter / KFS (vernacular)</span><span class="what">LLM borrower comms</span></td><td><span class="chip chip-C3">C3</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — Tata (KAI)</span></td><td class="c-rbi">Med — KFS legally binding</td><td class="c-verdict">One-shot generation.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Sanction &amp; docs</span><span class="uc">Loan agreement generation</span><span class="what">Template merge or LLM</span></td><td><span class="chip chip-multi">C0 (or C3)</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (templated)</span></td><td class="c-rbi">Low–Med — version control</td><td class="c-verdict">C0 templated; C3 if LLM.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Disbursal</span><span class="uc">Disbursal orchestration</span><span class="what">Checklist + payout trigger</span></td><td><span class="chip chip-C0">C0</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread</span></td><td class="c-rbi">Low — audit trail</td><td class="c-verdict">NOT AI. Workflow.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Disbursal</span><span class="uc">e-NACH / mandate setup</span><span class="what">API mandate registration</span></td><td><span class="chip chip-C0">C0</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">Low</td><td class="c-verdict">Integration.</td></tr>
+<tr data-class="C3" data-mat="production"><td class="c-uc"><span class="eyebrow">Servicing</span><span class="uc">Customer query chatbot</span><span class="what">LLM or intent-tree Q&amp;A</span></td><td><span class="chip chip-multi">C3 (or C0)</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production (widespread)</span></td><td class="c-rbi">Med — grievance path</td><td class="c-verdict">C3 if LLM; legacy bots are C0.</td></tr>
+<tr data-class="C3" data-mat="production"><td class="c-uc"><span class="eyebrow">Servicing</span><span class="uc">Servicing voice agent</span><span class="what">Speech + NLU service calls</span></td><td><span class="chip chip-multi">C3 + C0</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — Bajaj, Tata</span></td><td class="c-rbi">Med — disclose AI</td><td class="c-verdict">The voice-agent band.</td></tr>
+<tr data-class="C4" data-mat="piloted"><td class="c-uc"><span class="eyebrow">Servicing</span><span class="uc">Agentic self-service resolution</span><span class="what">Fetch, execute change, confirm</span></td><td><span class="chip chip-C4">C4</span></td><td class="c-mat"><span class="mat mat-piloted">Piloted</span><span class="mat-note">Piloted — Bajaj (800→600)</span></td><td class="c-rbi">Highest — action limits + escalation</td><td class="c-verdict verdict-c4">YES if end-to-end. Rare.</td></tr>
+<tr data-class="C2" data-mat="production"><td class="c-uc"><span class="eyebrow">Servicing</span><span class="uc">Complaint categorisation</span><span class="what">Classify + route tickets</span></td><td><span class="chip chip-multi">C2 or C3</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production</span></td><td class="c-rbi">Low–Med — audit trail</td><td class="c-verdict">Classification task.</td></tr>
+<tr data-class="C2" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Portfolio &amp; risk</span><span class="uc">Early Warning System</span><span class="what">Flags accounts likely to slip</span></td><td><span class="chip chip-C2">C2</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread — L&amp;T</span></td><td class="c-rbi">Med–High — drift monitoring</td><td class="c-verdict">Predictive ML, dashboarded.</td></tr>
+<tr data-class="C2" data-mat="production"><td class="c-uc"><span class="eyebrow">Portfolio &amp; risk</span><span class="uc">Micro-market cluster risk</span><span class="what">Geography-level stress prediction</span></td><td><span class="chip chip-C2">C2</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — L&amp;T Nostradamus</span></td><td class="c-rbi">Med — internal</td><td class="c-verdict">C3/C4 only for query layer.</td></tr>
+<tr data-class="C4" data-mat="production"><td class="c-uc"><span class="eyebrow">Portfolio &amp; risk</span><span class="uc">Portfolio-monitoring co-pilot</span><span class="what">NL query; flags + recommends</span></td><td><span class="chip chip-multi">C4 / C2</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — L&amp;T Orion</span></td><td class="c-rbi">Med — human acts</td><td class="c-verdict verdict-c4">Agentic interface; C2 model.</td></tr>
+<tr data-class="C2" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Portfolio &amp; risk</span><span class="uc">ECL / provisioning model</span><span class="what">Expected credit loss</span></td><td><span class="chip chip-C2">C2</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">High — audited governance</td><td class="c-verdict">Statistical/regulatory.</td></tr>
+<tr data-class="C2" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Collections</span><span class="uc">Propensity-to-pay</span><span class="what">Ranks recovery likelihood</span></td><td><span class="chip chip-C2">C2</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread</span></td><td class="c-rbi">Med — conduct</td><td class="c-verdict">Predictive ML.</td></tr>
+<tr data-class="C2" data-mat="production"><td class="c-uc"><span class="eyebrow">Collections</span><span class="uc">Next-best-action</span><span class="what">Channel/message/timing rec</span></td><td><span class="chip chip-multi">C2 (+C4)</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production</span></td><td class="c-rbi">Med — conduct rules</td><td class="c-verdict">C4 only if an agent executes.</td></tr>
+<tr data-class="C3" data-mat="production"><td class="c-uc"><span class="eyebrow">Collections</span><span class="uc">Collections voice bot</span><span class="what">Reminder/negotiation calls</span></td><td><span class="chip chip-multi">C3 + C0</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — Tata KAI, Bajaj</span></td><td class="c-rbi">High — Digital Lending MD conduct</td><td class="c-verdict">Executes a script.</td></tr>
+<tr data-class="C4" data-mat="piloted"><td class="c-uc"><span class="eyebrow">Collections</span><span class="uc">Agentic collections orchestration</span><span class="what">Decides + executes across account</span></td><td><span class="chip chip-C4">C4</span></td><td class="c-mat"><span class="mat mat-piloted">Piloted</span><span class="mat-note">Piloted (emerging)</span></td><td class="c-rbi">Highest — logs, limits, kill-switch</td><td class="c-verdict verdict-c4">YES if it plans and acts.</td></tr>
+<tr data-class="C3" data-mat="piloted"><td class="c-uc"><span class="eyebrow">Collections</span><span class="uc">Field-agent empathy co-pilot</span><span class="what">Live tone/script suggestions</span></td><td><span class="chip chip-C3">C3</span></td><td class="c-mat"><span class="mat mat-piloted">Piloted</span><span class="mat-note">Piloted / claimed</span></td><td class="c-rbi">Med — suggestion only</td><td class="c-verdict">Suggestion only.</td></tr>
+<tr data-class="C2" data-mat="production"><td class="c-uc"><span class="eyebrow">Collections</span><span class="uc">Settlement / restructure rec</span><span class="what">Proposes settlement terms</span></td><td><span class="chip chip-multi">C2 / C3</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production / piloted</span></td><td class="c-rbi">High — human decides</td><td class="c-verdict">Recommendation only.</td></tr>
+<tr data-class="C2" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Fraud &amp; compliance</span><span class="uc">Application / txn fraud detection</span><span class="what">Anomaly flags patterns</span></td><td><span class="chip chip-C2">C2</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">Med — explainable flags</td><td class="c-verdict">Anomaly ML.</td></tr>
+<tr data-class="C2" data-mat="production"><td class="c-uc"><span class="eyebrow">Fraud &amp; compliance</span><span class="uc">Identity fraud / dedupe</span><span class="what">CV matching across applicants</span></td><td><span class="chip chip-multi">C2 (CV)</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production — Bajaj (46M)</span></td><td class="c-rbi">Med — biometric/DPDP</td><td class="c-verdict">Narrow CV.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Fraud &amp; compliance</span><span class="uc">AML transaction monitoring</span><span class="what">Rules + anomaly scoring</span></td><td><span class="chip chip-multi">C0 + C2</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread (mature)</span></td><td class="c-rbi">Med — SAR justification</td><td class="c-verdict">Rules with ML overlay.</td></tr>
+<tr data-class="C3" data-mat="piloted"><td class="c-uc"><span class="eyebrow">Fraud &amp; compliance</span><span class="uc">Regulatory / policy Q&amp;A</span><span class="what">RAG over policy + circulars</span></td><td><span class="chip chip-C3">C3</span></td><td class="c-mat"><span class="mat mat-piloted">Piloted</span><span class="mat-note">Piloted / in production</span></td><td class="c-rbi">Med — internal guardrails</td><td class="c-verdict">RAG Q&amp;A.</td></tr>
+<tr data-class="C4" data-mat="claimed"><td class="c-uc"><span class="eyebrow">Fraud &amp; compliance</span><span class="uc">Agentic compliance file check</span><span class="what">Checks files vs policy, files exceptions</span></td><td><span class="chip chip-C4">C4</span></td><td class="c-mat"><span class="mat mat-claimed">Claimed</span><span class="mat-note">Claimed (rarely mature)</span></td><td class="c-rbi">Highest — logs + validation</td><td class="c-verdict verdict-c4">Mostly claimed.</td></tr>
+<tr data-class="C0" data-mat="production"><td class="c-uc"><span class="eyebrow">Internal ops</span><span class="uc">Reconciliation</span><span class="what">Match ledgers, flag breaks</span></td><td><span class="chip chip-multi">C0 / C2 (+C4)</span></td><td class="c-mat"><span class="mat mat-production">In production</span><span class="mat-note">In production; agentic piloted</span></td><td class="c-rbi">Low–Med — full logs</td><td class="c-verdict">Agentic recon emerging.</td></tr>
+<tr data-class="C0" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Internal ops</span><span class="uc">Audit trail / traceability</span><span class="what">Immutable decision logging</span></td><td><span class="chip chip-C0">C0</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread — FREE-AI mandated</span></td><td class="c-rbi">Enabler — mandated</td><td class="c-verdict">NOT AI, but the C4 gate.</td></tr>
+<tr data-class="C3" data-mat="piloted"><td class="c-uc"><span class="eyebrow">Internal ops</span><span class="uc">MIS / NL data query</span><span class="what">Plain-language data questions</span></td><td><span class="chip chip-multi">C3 / C4</span></td><td class="c-mat"><span class="mat mat-piloted">Piloted</span><span class="mat-note">Piloted / in production</span></td><td class="c-rbi">Low–Med — access control</td><td class="c-verdict">C4 if it chains queries.</td></tr>
+<tr data-class="C3" data-mat="widespread"><td class="c-uc"><span class="eyebrow">Internal ops</span><span class="uc">Developer / code co-pilot</span><span class="what">LLM assists engineering</span></td><td><span class="chip chip-C3">C3</span></td><td class="c-mat"><span class="mat mat-widespread">Widespread</span><span class="mat-note">Widespread</span></td><td class="c-rbi">Low — code review</td><td class="c-verdict">Out of lending scope.</td></tr></tbody></table></div>
+ </section>
+
+ <section id="mislabel">
+  <div class="sec-head"><span class="num">03</span><h2>Mislabel watchlist</h2></div>
+  <p class="lede">Nine phrases that appear in NBFC releases and vendor decks, decoded. Use with the diligence script in §08.</p>
+  <div class="tablewrap"><table>
+   <thead><tr><th>What the release says</th><th>What it usually is</th><th>Class</th><th>Why it’s not agentic</th></tr></thead>
+   <tbody><tr><td class="ml-say">“AI-powered KYC / onboarding”</td><td>OCR extraction + face match</td><td><span class="chip chip-multi">C1/C2</span></td><td class="ml-why">Reads and matches. No autonomous action.</td></tr>
+<tr><td class="ml-say">“AI-driven verification”</td><td>CIBIL / CKYC / GST / penny-drop calls</td><td><span class="chip chip-C0">C0</span></td><td class="ml-why">Integration plumbing. Not a model.</td></tr>
+<tr><td class="ml-say">“AI underwriting”</td><td>Scorecard + rule engine</td><td><span class="chip chip-multi">C2/C0</span></td><td class="ml-why">Predicts a score, applies fixed rules.</td></tr>
+<tr><td class="ml-say">“Autonomous / instant lending”</td><td>STP on a scorecard</td><td><span class="chip chip-multi">C0/C2</span></td><td class="ml-why">STP is not agency and needs no LLM.</td></tr>
+<tr><td class="ml-say">“AI risk / early-warning”</td><td>Delinquency model on a dashboard</td><td><span class="chip chip-C2">C2</span></td><td class="ml-why">Forecasts; does not act.</td></tr>
+<tr><td class="ml-say">“Agentic credit memo”</td><td>LLM drafts from human-fed inputs</td><td><span class="chip chip-C3">C3</span></td><td class="ml-why">Agentic only if it sources inputs.</td></tr>
+<tr><td class="ml-say">“Agentic voice collections”</td><td>Speech + NLU reminder calls</td><td><span class="chip chip-multi">C3/C0</span></td><td class="ml-why">Executes a script, not a plan.</td></tr>
+<tr><td class="ml-say">“AI fraud / AML”</td><td>Anomaly ML + rules</td><td><span class="chip chip-multi">C2/C0</span></td><td class="ml-why">Flags; human investigates and decides.</td></tr>
+<tr><td class="ml-say">“AI governance / audit”</td><td>Immutable decision logging</td><td><span class="chip chip-C0">C0</span></td><td class="ml-why">Logging. RBI-required, not AI.</td></tr></tbody></table></div>
+ </section>
+
+ <section id="firms">
+  <div class="sec-head"><span class="num">04</span><h2>Advisory-firm view — signal vs marketing</h2></div>
+  <p class="lede">The firms sell the transformation they describe (₹50L–10cr+ engagements in India). Read direction as signal, magnitude as marketing. Their consensus, then the correction:</p>
+  <div class="consensus"><ul>
+   <li><b>2026 = agentic inflection year;</b> BFSI leads adoption; most institutions are in “pilot purgatory.”</li>
+   <li><b>The bottleneck is the operating model,</b> not the model — and the regulated core is automated last.</li>
+  </ul></div>
+  <div class="firm-grid"><article class="firm"><h3>McKinsey</h3><p>Most-likely scenario = moderate adoption → ~15–20% cost cuts; full replacement rated &lt;5% likely. 50–60% of bank FTEs sit in operations — the prime target. Credit-memo agent case: 20–60% productivity, ~30% faster TAT.</p></article>
+<article class="firm"><h3>BCG</h3><p>Boldest numbers: +30% profitability, −30–40% costs by 2030. Only ~25% of banks have AI in strategy; 75% in pilots. Warns agentic AI cuts fraud-running cost ~90%.</p></article>
+<article class="firm"><h3>KPMG</h3><p>Best on India regulation — wrote the widely-cited FREE-AI explainer. ~$50bn agentic spend 2025; agent users report ~55% efficiency, ~35% cost cuts. Governance-first.</p></article>
+<article class="firm"><h3>EY</h3><p>Most India-specific: ~42% of Indian FIs investing in AI/GenAI, ~74% running PoCs scaling into ops and underwriting. NBFCs called the fastest adopters.</p></article>
+<article class="firm"><h3>Deloitte</h3><p>Most measured on timing: ~50% of GenAI adopters will pilot agentic by 2027. Highest near-term impact: customer support.</p></article>
+<article class="firm"><h3>PwC</h3><p>Productivity headlines: up to 90% time savings in targeted processes; ~80% cycle-time cuts in matching. Pushing AI-enabled audit in India.</p></article></div>
+  <div class="callout">
+   <h3>RBI FREE-AI (13 Aug 2025) — the binding constraint</h3>
+   <p><strong>Accountability:</strong> the lender is responsible for an AI decision regardless of autonomy. <strong>Understandable by Design:</strong> systems must be explainable by the deployer. Sector readiness, per RBI’s own survey:</p>
+   <div class="stats">
+    <div class="stat"><b>~21%</b><span>of entities deploy AI at all</span></div><div class="stat"><b>15%</b><span>use interpretability tools</span></div>
+    <div class="stat"><b>18%</b><span>maintain audit logs</span></div><div class="stat"><b>21%</b><span>monitor model drift</span></div>
+    <div class="stat"><b>⅓</b><span>have board-level AI oversight</span></div>
+   </div>
+  </div>
+  <div class="tablewrap"><table>
+   <thead><tr><th>Consulting claim</th><th>The Indian-lending qualifier</th></tr></thead>
+   <tbody><tr><td class="dv-claim">“Agentic AI transforms the lending lifecycle.”</td><td class="dv-real">True for pipeline, servicing, collections, monitoring. The <strong>credit decision stays human-governed</strong> — FREE-AI Accountability makes it a legal requirement.</td></tr>
+<tr><td class="dv-claim">“30–40% cost cuts / 90% time savings.”</td><td class="dv-real">Global best-case, mostly back-office. The grounded Indian number: L&T Helios ~30% TAT cut on a <strong>co-pilot</strong>.</td></tr>
+<tr><td class="dv-claim">“75% stuck in pilots — move now.”</td><td class="dv-real">India’s base is lower: ~21% deploy AI at all; responsible-AI readiness in low double digits. Constraint is <strong>foundations</strong>.</td></tr>
+<tr><td class="dv-claim">“Autonomous agents are here.”</td><td class="dv-real">The one autonomous Indian lender (Trust Paisa) is <strong>small-ticket digital-native</strong>. Nobody runs it on secured or MSME books.</td></tr>
+<tr><td class="dv-claim">“This is a technology decision.”</td><td class="dv-real">It is an <strong>operating-model and governance</strong> decision — and in India, a <strong>regulatory</strong> decision first.</td></tr></tbody></table></div>
+ </section>
+
+ <section id="bajaj">
+  <div class="sec-head"><span class="num">05</span><h2>Bajaj FINAI — teardown, and what to copy</h2></div>
+  <div class="verdict-band">
+   <div class="vcard good"><h3>✓ Most substantive AI programme in Indian lending</h3><p>Quantified AI metrics on earnings calls, tied to opex and disbursals. The Ken rates it the “bar raiser” vs performative fintech AI. Scale and disclosure discipline are real.</p></div>
+   <div class="vcard bad"><h3>✕ Substance is C1–C3; the C4 layer is thin and shrinking</h3><p>Deployed: voice analytics, bots, face CV, document IDP, GenAI SDLC. Agentic: 27 live agents vs a 600+ FY27 target cut from 800+, scoped to internal ops — not the credit decision. Microsite is future-tense branding; only earnings disclosures are falsifiable.</p></div>
+  </div>
+  <div class="tablewrap"><table>
+   <thead><tr><th>#</th><th>Bajaj claim (earnings / deck)</th><th>Class</th><th>Maturity</th><th>Assessment</th></tr></thead>
+   <tbody><tr><td class="bn">1</td><td class="bc"><span class="uc">~20M calls voice-to-text; 5.2L customers → 100k offers</span><span class="what">ASR + LLM feeding propensity model</span></td><td><span class="chip chip-multi">C3 + C2</span></td><td><span class="mat mat-production">In production</span></td><td class="bv">Real scale. GenAI analytics — not agentic.</td></tr>
+<tr><td class="bn">2</td><td class="bc"><span class="uc">Voice/text bots; 72% self-service; ₹1,600–1,895cr disbursed; ⅓ human cost</span><span class="what">Conversational GenAI + dialer</span></td><td><span class="chip chip-multi">C3 + C0</span></td><td><span class="mat mat-production">In production</span></td><td class="bv">Voice frontier industrialised, not surpassed.</td></tr>
+<tr><td class="bn">3</td><td class="bc"><span class="uc">Collections bots: 0 → 6,632 receipts in a quarter</span><span class="what">Conversational collections bot</span></td><td><span class="chip chip-C3">C3</span></td><td><span class="mat mat-production">In production</span></td><td class="bv">Conversation, not orchestration.</td></tr>
+<tr><td class="bn">4</td><td class="bc"><span class="uc">Face recognition: 46M matches; 60→1,000+ cameras</span><span class="what">CV biometric matching</span></td><td><span class="chip chip-C2">C2</span></td><td><span class="mat mat-production">In production</span></td><td class="bv">⚠ No consent/retention framework disclosed.</td></tr>
+<tr><td class="bn">5</td><td class="bc"><span class="uc">Doc auto-QC 41% → target 85–90%; 650k apps/day</span><span class="what">OCR / IDP + classification</span></td><td><span class="chip chip-multi">C1 + C2</span></td><td><span class="mat mat-production">In production</span></td><td class="bv">OCR relabelled as AI.</td></tr>
+<tr><td class="bn">6</td><td class="bc"><span class="uc">99% BRDs AI-generated; 40% test cases; ~25% dev lift</span><span class="what">GenAI code/doc assistants</span></td><td><span class="chip chip-C3">C3</span></td><td><span class="mat mat-production">In production</span></td><td class="bv">Real, but outside the decision path.</td></tr>
+<tr><td class="bn">7</td><td class="bc"><span class="uc">~100% marketing videos AI-generated</span><span class="what">Generative media</span></td><td><span class="chip chip-C3">C3</span></td><td><span class="mat mat-production">In production</span></td><td class="bv">Out of scope.</td></tr>
+<tr><td class="bn">8</td><td class="bc"><span class="uc">“End-to-end AI” loans: ~10k/mo, ₹150cr</span><span class="what">STP on small pre-approved tickets</span></td><td><span class="chip chip-multi">C0 + C2</span></td><td><span class="mat mat-production">In production</span></td><td class="bv">Autonomous but not agentic. Bounded.</td></tr>
+<tr><td class="bn">9</td><td class="bc"><span class="uc">“800+ autonomous agents” → 600+; 27 live</span><span class="what">Agentic orchestration — mostly plan</span></td><td><span class="chip chip-C4">C4</span></td><td><span class="mat mat-piloted">Piloted</span></td><td class="bv">Only real C4 claim. Walked back in one quarter.</td></tr>
+<tr><td class="bn">10</td><td class="bc"><span class="uc">FY27: discovery via ChatGPT/Gemini; 24 journeys</span><span class="what">Distribution + journey redesign</span></td><td><span class="chip chip-multi">—</span></td><td><span class="mat mat-claimed">Claimed</span></td><td class="bv">Roadmap, not deployed.</td></tr></tbody></table></div>
+  <div class="flag">
+   <h3>⚑ What HFS should copy — and skip</h3>
+   <ul>
+    <li><strong>Copy:</strong> the disclosure discipline (publish internal AI benefit metrics quarterly, even if only to the board); the 123-use-case inventory method; retraining existing ML staff instead of chasing “AI talent”; voice-data mining for offer generation once call volumes justify it.</li>
+    <li><strong>Skip:</strong> the “autonomous agents” branding ahead of substance; face-recognition rollout without a disclosed consent/retention framework (live DPDP/FREE-AI exposure); agent-count targets announced before the architecture is proven (800→600 in one quarter).</li>
+    <li><strong>Watch quarterly:</strong> live agent count + scope, and the first agentic system on a non-pre-approved credit decision. Neither has happened.</li>
+   </ul>
+  </div>
+ </section>
+
+ <section id="buildwait">
+  <div class="sec-head"><span class="num">06</span><h2>Build vs wait — the HFS call</h2></div>
+  <p class="lede">Five honestly-agentic bets. One build, two splits, two waits — with cost anchors, timelines, KPIs, and the trigger that flips each verdict. “Wait” mostly means: buy the mature non-agentic slice now.</p>
+  <div class="assume"><h4>Assumptions — recalibrate if wrong</h4><p>HFS as an emerging NBFC consolidating lending-tech foundations; volumes well below L&amp;T/Bajaj; vendor-led delivery; FREE-AI applying in full. Cost ranges are directional market anchors, not quotes.</p></div>
+  <div class="summary"><div class="sm sm-build"><span class="sm-v">Build now</span><span class="sm-n">Portfolio-monitoring co-pilot</span></div><div class="sm sm-split"><span class="sm-v">Split</span><span class="sm-n">Agentic self-service resolution</span></div><div class="sm sm-split"><span class="sm-v">Split</span><span class="sm-n">Agentic collections orchestration</span></div><div class="sm sm-wait"><span class="sm-v">Wait</span><span class="sm-n">Agentic underwriting co-pilot</span></div><div class="sm sm-wait"><span class="sm-v">Wait</span><span class="sm-n">Agentic compliance file check</span></div></div>
+  <div class="crit-grid"><div class="crit"><span class="crit-n">01</span><div><h4>RBI constraint height</h4><p>Heavier accountability/explainability burden → keep the human in the loop, wait.</p></div></div>
+<div class="crit"><span class="crit-n">02</span><div><h4>Market maturity</h4><p>In production at named peers = safe to buy. Claimed/piloted = don’t be the guinea pig.</p></div></div>
+<div class="crit"><span class="crit-n">03</span><div><h4>Build economics</h4><p>HFS volumes don’t amortise bespoke agentic builds. Default: buy or partner.</p></div></div>
+<div class="crit"><span class="crit-n">04</span><div><h4>Value to a growing book</h4><p>Risk visibility and cost-to-serve pay off before a faster credit memo.</p></div></div>
+<div class="crit"><span class="crit-n">05</span><div><h4>Downside asymmetry</h4><p>A conduct/compliance incident is near-existential for a young lender.</p></div></div>
+<div class="crit"><span class="crit-n">06</span><div><h4>Foundations readiness</h4><p>Clean data, reason codes, audit logs, drift monitoring — the FREE-AI list is the C4 gate.</p></div></div></div>
+  <article class="card" id="bw-portfolio"><div class="card-head"><div class="card-title"><h3>Portfolio-monitoring co-pilot</h3><p class="csub">NL query over delinquency/vintage data; flags stress, recommends action; human acts.</p></div><span class="vbadge v-build">Build now</span></div><div class="card-meta"><span class="chip chip-C4">C4</span> <span class="mat mat-production">In production</span> <span class="mtag">RBI: Medium</span> <span class="mtag">Peers: L&amp;T Orion / Nostradamus</span><span class="mtag mtag-cost">₹40–80L build (2–3 engineers + LLM API) or ₹8–20L/yr SaaS</span><span class="mtag mtag-cost">90-day v1 feasible</span></div><div class="gauge"><div class="track"><span class="stop" style="left:12%">Wait</span><span class="stop" style="left:37%">Pilot</span><span class="stop" style="left:62%">Buy</span><span class="stop" style="left:87%">Build</span><div class="fill fill-build" style="width:85%"></div><div class="dot dot-build" style="left:85%"></div></div></div><div class="fw"><div class="fw-col fw-build"><h4>Case to build</h4><ul><li>Lowest regulatory friction — internal, human acts on output.</li><li>Highest survival value for a scaling book: early, granular risk visibility.</li><li>Rides on data + EWS you must build anyway.</li><li>Safe place to learn agentic orchestration.</li></ul></div><div class="fw-col fw-wait"><h4>Case to wait</h4><ul><li>Needs a consolidated data lake and working EWS underneath, or the agent surfaces noise.</li></ul></div></div><div class="hfs"><span class="hfs-lbl">HFS call</span><p><strong>Green-light.</strong> NL-query + threshold alerting over portfolio data on/alongside a C2 EWS. Wrong output costs a second look, not a customer.</p><div class="moves"><div><span class="mv">First move</span>90-day v1: NL queries + alerts on one product’s book.</div><div><span class="mv">Escalate when</span>— start now.</div><div><span class="mv">KPIs to run</span>Query adoption by risk team; % of EWS flags actioned <7 days; false-alert rate</div></div></div></article>
+<article class="card" id="bw-servicing"><div class="card-head"><div class="card-title"><h3>Agentic self-service resolution</h3><p class="csub">Agent fetches account, executes the change, confirms — end-to-end.</p></div><span class="vbadge v-split">Split — C3 now, agentic later</span></div><div class="card-meta"><span class="chip chip-C4">C4</span> <span class="mat mat-piloted">Piloted</span> <span class="mtag">RBI: Highest</span> <span class="mtag">Peers: Bajaj (800→600)</span><span class="mtag mtag-cost">C3 assistant: ₹10–25L/yr SaaS. Agentic layer: defer</span><span class="mtag mtag-cost">C3 live in 60–90 days</span></div><div class="gauge"><div class="track"><span class="stop" style="left:12%">Wait</span><span class="stop" style="left:37%">Pilot</span><span class="stop" style="left:62%">Buy</span><span class="stop" style="left:87%">Build</span><div class="fill fill-split" style="width:37%"></div><div class="dot dot-split" style="left:37%"></div></div></div><div class="fw"><div class="fw-col fw-build"><h4>Case to build</h4><ul><li>Deflects servicing cost; 24×7 coverage as the base grows.</li></ul></div><div class="fw-col fw-wait"><h4>Case to wait</h4><ul><li>The agentic increment = autonomous state changes — action-risk and grievance exposure out of proportion to a small book.</li><li>Unproven even at Bajaj scale.</li></ul></div></div><div class="hfs"><span class="hfs-lbl">HFS call</span><p>Buy a <strong>C3 assistant now</strong> (FAQs, statements, status — no state changes): ~80% of value at ~20% of risk. Hold execution until guardrails and peer proof mature.</p><div class="moves"><div><span class="mv">First move</span>C3 assistant on top-20 query intents.</div><div><span class="mv">Escalate when</span>Contained-resolution plateaus + provable execution guardrails.</div><div><span class="mv">KPIs to run</span>Containment rate; CSAT on bot sessions; escalation accuracy; cost per resolved query</div></div></div></article>
+<article class="card" id="bw-collections"><div class="card-head"><div class="card-title"><h3>Agentic collections orchestration</h3><p class="csub">Agent decides + executes across the account — message, call, escalate, log.</p></div><span class="vbadge v-split">Split — C2/C3 now, agentic later</span></div><div class="card-meta"><span class="chip chip-C4">C4</span> <span class="mat mat-piloted">Piloted</span> <span class="mtag">RBI: Highest</span> <span class="mtag">Peers: emerging</span><span class="mtag mtag-cost">Propensity + reminder bot: ₹15–35L/yr vendor stack</span><span class="mtag mtag-cost">Propensity 60 days; bot 90 days</span></div><div class="gauge"><div class="track"><span class="stop" style="left:12%">Wait</span><span class="stop" style="left:37%">Pilot</span><span class="stop" style="left:62%">Buy</span><span class="stop" style="left:87%">Build</span><div class="fill fill-split" style="width:30%"></div><div class="dot dot-split" style="left:30%"></div></div></div><div class="fw"><div class="fw-col fw-build"><h4>Case to build</h4><ul><li>High-ROI function; orchestration promises timing/channel optimisation.</li></ul></div><div class="fw-col fw-wait"><h4>Case to wait</h4><ul><li>Highest-conduct-risk zone — recovery rules, grievance redressal, Digital Lending MD amendments all bite here.</li><li>One conduct incident = asymmetric damage for a young lender.</li><li>Autonomous layer unproven.</li></ul></div></div><div class="hfs"><span class="hfs-lbl">HFS call</span><p>Buy <strong>C2 propensity prioritisation</strong> + <strong>C3 multilingual reminder bots</strong> (script-bounded). Wait on autonomy until kill-switches and clean peer conduct outcomes exist.</p><div class="moves"><div><span class="mv">First move</span>Propensity bucketing + bounded reminder bot.</div><div><span class="mv">Escalate when</span>Provable conduct guardrails + peer conduct evidence.</div><div><span class="mv">KPIs to run</span>Roll-back rate by bucket; promise-to-pay kept %; complaints per 10k contacts (watch this one)</div></div></div></article>
+<article class="card" id="bw-underwriting"><div class="card-head"><div class="card-title"><h3>Agentic underwriting co-pilot</h3><p class="csub">Ingest → bureau → spread → memo → route, around a human underwriter.</p></div><span class="vbadge v-wait">Wait — foundations first</span></div><div class="card-meta"><span class="chip chip-C4">C4</span> <span class="mat mat-production">In production</span> <span class="mtag">RBI: Highest</span> <span class="mtag">Peers: L&amp;T Helios · Tata</span><span class="mtag mtag-cost">Bespoke: ₹2–5cr — doesn’t amortise. Vendor pilot later: ₹30–60L</span><span class="mtag mtag-cost">Revisit in 12–18 months</span></div><div class="gauge"><div class="track"><span class="stop" style="left:12%">Wait</span><span class="stop" style="left:37%">Pilot</span><span class="stop" style="left:62%">Buy</span><span class="stop" style="left:87%">Build</span><div class="fill fill-wait" style="width:22%"></div><div class="dot dot-wait" style="left:22%"></div></div></div><div class="fw"><div class="fw-col fw-build"><h4>Case to build</h4><ul><li>Peers report ~30% TAT cut, 1.5 hrs/SME case saved.</li><li>Keeps scarce underwriters on judgment.</li></ul></div><div class="fw-col fw-wait"><h4>Case to wait</h4><ul><li>Needs mature LOS/LMS, clean spreading, live reason-code + audit layer.</li><li>HFS volumes don’t amortise a bespoke multi-agent build.</li><li>RBI keeps the human on the decision — payoff caps at “faster human.”</li><li>LOS vendors will ship this as a feature within 12–18 months.</li></ul></div></div><div class="hfs"><span class="hfs-lbl">HFS call</span><p>Don’t build. Fix C0–C2 foundations + reason-code/audit layer (needed for FREE-AI anyway). Then run a <em>narrow bought pilot</em> on one product line.</p><div class="moves"><div><span class="mv">First move</span>Foundations inventory + explicit volume trigger.</div><div><span class="mv">Escalate when</span>Volume + clean data amortise a co-pilot; vendor offers FREE-AI-aligned explainability.</div><div><span class="mv">KPIs to run</span>(pre-work) % files with complete digital data; reason-code coverage; TAT baseline</div></div></div></article>
+<article class="card" id="bw-compliance"><div class="card-head"><div class="card-title"><h3>Agentic compliance file check</h3><p class="csub">Agent checks each file vs policy, flags gaps, files exceptions autonomously.</p></div><span class="vbadge v-wait">Wait — immature</span></div><div class="card-meta"><span class="chip chip-C4">C4</span> <span class="mat mat-claimed">Claimed</span> <span class="mtag">RBI: Highest</span> <span class="mtag">Peers: rarely mature</span><span class="mtag mtag-cost">C3 RAG assistant: ₹5–15L. Agentic: no credible vendor</span><span class="mtag mtag-cost">RAG in 45–60 days</span></div><div class="gauge"><div class="track"><span class="stop" style="left:12%">Wait</span><span class="stop" style="left:37%">Pilot</span><span class="stop" style="left:62%">Buy</span><span class="stop" style="left:87%">Build</span><div class="fill fill-wait" style="width:10%"></div><div class="dot dot-wait" style="left:10%"></div></div></div><div class="fw"><div class="fw-col fw-build"><h4>Case to build</h4><ul><li>Appealing on paper — policy conformance on every file.</li></ul></div><div class="fw-col fw-wait"><h4>Case to wait</h4><ul><li>Mostly vaporware; few audited deployments anywhere.</li><li>A young NBFC should not be the guinea pig for autonomous compliance.</li></ul></div></div><div class="hfs"><span class="hfs-lbl">HFS call</span><p>Deploy a <strong>C3 RAG policy/circular assistant</strong> for the compliance team. Hold the agentic file-check; monitor the market.</p><div class="moves"><div><span class="mv">First move</span>RAG over internal policy + RBI circulars.</div><div><span class="mv">Escalate when</span>≥2 credible vendors with audited in-production deployments.</div><div><span class="mv">KPIs to run</span>Compliance-team query volume; answer-accuracy sampling; time saved per policy lookup</div></div></div></article>
+  <h3 style="font-size:16px;margin:26px 0 4px">One-page matrix</h3>
+  <div class="tablewrap"><table>
+   <thead><tr><th>Use case</th><th>Maturity</th><th>RBI</th><th>Indicative cost</th><th>Verdict</th><th>First move</th></tr></thead>
+   <tbody><tr><td class="mx-uc">Portfolio-monitoring co-pilot</td><td><span class="mat mat-production">In production</span></td><td>Medium</td><td class="mx-econ">₹40–80L build / ₹8–20L SaaS</td><td><span class="vbadge v-build">Build now</span></td><td class="mx-move">90-day v1 on one book</td></tr>
+<tr><td class="mx-uc">Agentic self-service (servicing)</td><td><span class="mat mat-piloted">Piloted</span></td><td>Highest</td><td class="mx-econ">₹10–25L/yr (C3 slice)</td><td><span class="vbadge v-split">Split</span></td><td class="mx-move">C3 assistant; defer execution</td></tr>
+<tr><td class="mx-uc">Agentic collections orchestration</td><td><span class="mat mat-piloted">Piloted</span></td><td>Highest</td><td class="mx-econ">₹15–35L/yr (C2/C3 slices)</td><td><span class="vbadge v-split">Split</span></td><td class="mx-move">Propensity + bounded bot</td></tr>
+<tr><td class="mx-uc">Agentic underwriting co-pilot</td><td><span class="mat mat-production">In production</span></td><td>Highest</td><td class="mx-econ">₹30–60L bought pilot, later</td><td><span class="vbadge v-wait">Wait</span></td><td class="mx-move">Foundations; revisit 12–18 mo</td></tr>
+<tr><td class="mx-uc">Agentic compliance file check</td><td><span class="mat mat-claimed">Claimed</span></td><td>Highest</td><td class="mx-econ">₹5–15L (RAG only)</td><td><span class="vbadge v-wait">Wait</span></td><td class="mx-move">RAG assistant; monitor market</td></tr></tbody></table></div>
+ </section>
+
+ <section id="vendors">
+  <div class="sec-head"><span class="num">07</span><h2>Vendor landscape — who sells each layer</h2></div>
+  <p class="lede">Illustrative Indian-market names per layer (mid-2026), with the negotiating posture for each. Commodity layers: squeeze price. Decision-adjacent layers: squeeze explainability.</p>
+  <div class="tablewrap"><table>
+   <thead><tr><th>Layer</th><th>Representative vendors</th><th>Negotiating posture</th></tr></thead>
+   <tbody><tr><td class="vd-layer">Data &amp; KYC extraction (C0/C1)</td><td class="vd-names">Perfios · Signzy · IDfy · Digio · Karza (Perfios)</td><td class="vd-note">Commodity layer — negotiate on price and SLA, not capability. Insist on per-file accuracy SLAs and DPDP-compliant retention.</td></tr>
+<tr><td class="vd-layer">Underwriting infra &amp; BRE/LOS (C0/C2)</td><td class="vd-names">Lentra · Pennant · Newgen · FinBox · Scienaptic · Jocata</td><td class="vd-note">This is where your FREE-AI reason-code + audit layer must live. Make explainability output (per-decision reason codes) a contractual deliverable.</td></tr>
+<tr><td class="vd-layer">Voice &amp; conversational (C3)</td><td class="vd-names">Gnani.ai · CoRover · Sarvam AI · Haptik · Yellow.ai · ORAI</td><td class="vd-note">Insist on vernacular benchmarks on YOUR call recordings, not demos. Contract must state AI-disclosure and grievance-handover behaviour.</td></tr>
+<tr><td class="vd-layer">Collections stack (C2/C3)</td><td class="vd-names">Credgenics · Spocto (Yubi) · CreditMate</td><td class="vd-note">Ask for complaints-per-10k-contacts data from existing clients. Script-bounded bots only; no autonomous escalation authority.</td></tr>
+<tr><td class="vd-layer">Portfolio/EWS &amp; analytics (C2→C4)</td><td class="vd-names">In-house on Databricks/Snowflake + LLM API · CRIF · TransUnion analytics</td><td class="vd-note">The build-now zone. Own the data model; rent the LLM. Avoid vendor lock-in on your portfolio schema.</td></tr>
+<tr><td class="vd-layer">Explainability &amp; model governance</td><td class="vd-names">Arya.ai · Fiddler-type MRM tooling · in-house SHAP pipelines</td><td class="vd-note">Small spend, outsized regulatory value. This line item is what converts every &#x27;wait&#x27; into a future &#x27;buy&#x27;.</td></tr></tbody></table></div>
+ </section>
+
+ <section id="diligence">
+  <div class="sec-head"><span class="num">08</span><h2>Vendor diligence script — ten questions</h2></div>
+  <p class="lede">Ask these of any vendor claiming “agentic AI.” Questions 1 and 8 alone eliminate most of the mislabel watchlist.</p>
+  <ol class="dil"><li>Show me the agent’s action log for one real production case, end to end. (No log = no agent.)</li>
+<li>Which steps can it execute without human approval, and what are the hard limits per action?</li>
+<li>What is the per-decision explainability output — reason codes, feature attributions — and in what format do we get it for RBI audit?</li>
+<li>What happens when the LLM is down or wrong? Show the fallback path and the kill-switch.</li>
+<li>How many Indian regulated entities run this in production (not pilot)? Name two we can call.</li>
+<li>Where is inference hosted, where does our data rest, and what is the retention/deletion policy under DPDP?</li>
+<li>What is the drift-monitoring cadence and who is alerted?</li>
+<li>If your ‘agent’ is a workflow of API calls + a scorecard, say so — price it as C0/C2, not C4.</li>
+<li>What conduct guardrails exist for customer-facing actions (frequency caps, timing windows, language)?</li>
+<li>Contractually: who is liable when the agent errs? (FREE-AI says we are — so your indemnity and audit-rights clauses matter.)</li></ol>
+ </section>
+
+ <section id="roadmap">
+  <div class="sec-head"><span class="num">09</span><h2>12-month execution roadmap</h2></div>
+  <p class="lede">Sequenced so every quarter ships something usable while building the FREE-AI base that unlocks the next quarter.</p>
+  <article class="road"><div class="road-head"><span class="road-q">Q1 (0–90 days)</span><h3>Foundations + first agent</h3></div><ul><li>FREE-AI gap assessment against the 10-point checklist below; assign owners.</li><li>Ship portfolio-monitoring v1: NL queries + threshold alerts on one product’s book.</li><li>Deploy C3 RAG policy assistant for compliance (45–60 days).</li><li>Baseline metrics: underwriting TAT, cost per serviced query, roll-rates by bucket.</li></ul></article>
+<article class="road"><div class="road-head"><span class="road-q">Q2 (3–6 months)</span><h3>Buy the mature slices</h3></div><ul><li>C3 servicing assistant live on top-20 intents (no state changes).</li><li>Collections: propensity bucketing + script-bounded multilingual reminder bot.</li><li>Stand up reason-code + immutable audit logging in the LOS path (FREE-AI + future C4 gate).</li><li>Run vendor diligence (script below) on 2–3 underwriting co-pilot vendors — evaluation only.</li></ul></article>
+<article class="road"><div class="road-head"><span class="road-q">Q3–Q4 (6–12 months)</span><h3>Deepen + decide</h3></div><ul><li>Portfolio co-pilot v2: cross-product queries, drift alerts, monthly risk-pack automation.</li><li>Board-approved AI policy + model inventory (FREE-AI expectation; also your licence to scale).</li><li>Re-test the underwriting trigger: volume, data completeness, vendor explainability. If met → narrow bought pilot on ONE product line.</li><li>Quarterly tracker: Bajaj/L&amp;T/Tata agentic disclosures — count live agents and scope, not announcements.</li></ul></article>
+ </section>
+
+ <section id="freeai">
+  <div class="sec-head"><span class="num">10</span><h2>FREE-AI readiness checklist</h2></div>
+  <p class="lede">Ten items, each with the evidence an examiner would ask for and a suggested owner. This list is simultaneously your compliance posture and your licence to deploy anything C4.</p>
+  <div class="tablewrap"><table>
+   <thead><tr><th>Requirement</th><th>Evidence to produce</th><th>Owner</th></tr></thead>
+   <tbody><tr><td class="fa-item">Board-approved AI policy</td><td class="fa-ev">Policy doc + board minute</td><td class="fa-own">CTO / Company Secretary</td></tr>
+<tr><td class="fa-item">Model inventory (all C2+ models)</td><td class="fa-ev">Register with owner, version, validation date</td><td class="fa-own">Head of Risk</td></tr>
+<tr><td class="fa-item">Per-decision reason codes on credit models</td><td class="fa-ev">Sample decision file with codes</td><td class="fa-own">Head of Credit</td></tr>
+<tr><td class="fa-item">Bias / fairness testing</td><td class="fa-ev">Test report per model, refreshed annually</td><td class="fa-own">Risk / Data Science</td></tr>
+<tr><td class="fa-item">Immutable audit logs on decisions &amp; agent actions</td><td class="fa-ev">Log extract for any given loan ID</td><td class="fa-own">CTO</td></tr>
+<tr><td class="fa-item">Drift monitoring with alert thresholds</td><td class="fa-ev">Dashboard + alert history</td><td class="fa-own">Data Science</td></tr>
+<tr><td class="fa-item">DPDP consent + retention mapping for AI data</td><td class="fa-ev">Data-flow map + consent artefacts</td><td class="fa-own">DPO / Compliance</td></tr>
+<tr><td class="fa-item">Vendor AI-risk clauses (audit rights, liability, exit)</td><td class="fa-ev">Updated MSA template</td><td class="fa-own">Legal / Procurement</td></tr>
+<tr><td class="fa-item">AI incident-reporting process</td><td class="fa-ev">Runbook + one tabletop exercise</td><td class="fa-own">CISO / Ops</td></tr>
+<tr><td class="fa-item">Customer-facing AI disclosure + grievance path</td><td class="fa-ev">Bot scripts + grievance SLA</td><td class="fa-own">Customer Service Head</td></tr></tbody></table></div>
+ </section>
+
+ <section id="bottom">
+  <div class="sec-head"><span class="num">11</span><h2>Bottom line</h2></div>
+  <div class="bl">
+   <div class="kicker">One paragraph to defend in any room</div>
+   <h2 style="font-size:1.45rem;margin:0 0 14px">The pipeline is agentic. The decision is human. The gate is foundations.</h2>
+   <p>Agentic AI is real in Indian lending’s pipeline, servicing and portfolio layers, and absent from the credit decision — by regulation, not by technology gap. For HFS: build one agent now (portfolio monitoring, ~90 days), buy the mature C2/C3 slices of servicing and collections, wait on underwriting (12–18 months, then a bought pilot) and agentic compliance (vendor market immature). Spend the difference on the FREE-AI checklist — reason codes, audit logs, drift monitoring, board policy — because it is both the compliance requirement and the precondition for every future agent. Re-run the five verdicts each quarter against peer disclosures; the trigger conditions are written on each card.</p>
+  </div>
+ </section>
+
+ <section id="sources">
+  <div class="sec-head"><span class="num">•</span><h2>Sources &amp; caveats</h2></div>
+  <p class="src">L&T Finance · Tata Capital · Bajaj Finance — FY26 earnings calls &amp; investor decks (Cyclops, Helios, Nostradamus, Orion, KAI, FINAI).<br>Bajaj Finserv TICC/FINAI microsite (branding only).<br>Medianama — Bajaj Q3/Q4 FY26 (800→600 walkback, consent gap). The Ken — “AI bar raiser” (Feb 2026).<br>Trust Paisa / Fingular — autonomous small-ticket decisioning.<br>McKinsey · BCG · KPMG · EY · Deloitte · PwC — banking/agentic publications 2025–26.<br>Cambridge CCAF — 2026 Global AI in Financial Services Report.<br>RBI — FREE-AI framework (13 Aug 2025); AI-adoption survey (Feb–May 2025); Digital Lending Master Direction.<br>Vendor names are market landscape as of mid-2026, illustrative not exhaustive; cost/timeline ranges are directional planning anchors from market pricing, not quotes — validate in procurement.</p>
+  <footer>Compiled July 2026 · Consolidates: C0–C4 classification, 46-use-case catalogue, mislabel watchlist, advisory-firm synthesis, Bajaj FINAI teardown, HFS build-vs-wait, vendor landscape, diligence script, roadmap, FREE-AI checklist · Analytical judgment for internal reference, not investment, legal or procurement advice.</footer>
+ </section>
+</main>
+</div>
+<script>
+const links=[...document.querySelectorAll('nav.toc a')];const map={};links.forEach(a=>{map[a.getAttribute('href').slice(1)]=a;});
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=map[e.target.id];if(a)a.classList.add('active');}});},{rootMargin:'-20% 0px -70% 0px'});
+document.querySelectorAll('section[id],header[id]').forEach(s=>obs.observe(s));
+let fc='all',fm='all';
+function apply(){let n=0;document.querySelectorAll('#cat-body tr').forEach(tr=>{const ok=(fc==='all'||tr.dataset.class===fc)&&(fm==='all'||tr.dataset.mat===fm);tr.classList.toggle('hide',!ok);if(ok)n++;});document.getElementById('cat-count').textContent=n+' of 46 use cases';}
+document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{const g=b.dataset.group;document.querySelectorAll('.fbtn[data-group="'+g+'"]').forEach(x=>x.classList.remove('on'));b.classList.add('on');if(g==='class')fc=b.dataset.class;else fm=b.dataset.mat;apply();}));
+</script>
+</body></html>
