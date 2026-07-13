@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic AI Intervention Strategy — Follow-up Rigor on Unprocessed MSME-LAP Cases</title>
+<style>
+  :root{
+    --navy:#1F3864; --blue:#2E75B6; --lblue:#DEEAF6; --orange:#C55A11; --lorange:#FBE5D6;
+    --green:#538135; --lgreen:#E2EFD9; --red:#C00000; --lred:#FBE3E3; --grey:#595959;
+    --bg:#F7F9FC; --card:#FFFFFF; --line:#E3E8F0; --ink:#1A2233;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; scroll-padding-top:70px;}
+  body{font-family:'Segoe UI',Calibri,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5;}
+
+  /* ===== NAV ===== */
+  nav{position:sticky; top:0; z-index:100; background:var(--navy); box-shadow:0 2px 10px rgba(0,0,0,.25);}
+  nav .wrap{max-width:1250px; margin:0 auto; display:flex; align-items:center; gap:4px; padding:0 16px; overflow-x:auto;}
+  nav .brand{color:#fff; font-weight:700; font-size:.85rem; white-space:nowrap; padding:14px 14px 14px 0; border-right:1px solid rgba(255,255,255,.2); margin-right:6px;}
+  nav a{color:#C9D6EC; text-decoration:none; font-size:.78rem; padding:14px 10px; white-space:nowrap; border-bottom:3px solid transparent;}
+  nav a:hover{color:#fff; border-bottom-color:var(--orange);}
+
+  .page{max-width:1250px; margin:0 auto; padding:0 20px 80px;}
+
+  /* ===== HERO ===== */
+  header.hero{background:linear-gradient(135deg,var(--navy) 0%,#2a4d8f 60%,var(--blue) 100%); color:#fff; border-radius:0 0 18px 18px; padding:46px 40px 38px; margin-bottom:34px;}
+  header.hero h1{font-size:2rem; margin-bottom:8px;}
+  header.hero p.sub{font-size:1.05rem; color:#D9E5F5;}
+  header.hero p.meta{margin-top:14px; font-size:.8rem; color:#AFC4E3;}
+  .hero-stats{display:flex; gap:16px; margin-top:22px; flex-wrap:wrap;}
+  .hero-stat{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); border-radius:10px; padding:12px 18px; min-width:170px;}
+  .hero-stat b{display:block; font-size:1.15rem;}
+  .hero-stat span{font-size:.75rem; color:#C9D6EC;}
+
+  /* ===== SECTIONS ===== */
+  section{margin-bottom:46px;}
+  h2{color:var(--navy); font-size:1.4rem; margin-bottom:6px; padding-bottom:8px; border-bottom:3px solid var(--orange); display:inline-block;}
+  .h2row{display:flex; align-items:baseline; gap:12px; margin-bottom:14px;}
+  .secnum{background:var(--orange); color:#fff; font-weight:700; border-radius:8px; padding:4px 12px; font-size:1rem;}
+  h3{color:var(--blue); font-size:1.05rem; margin:22px 0 10px;}
+  p.lead{color:var(--grey); font-size:.92rem; max-width:950px; margin-bottom:14px;}
+  p.lead em{color:var(--orange); font-style:normal; font-weight:600;}
+
+  /* ===== TABLES ===== */
+  .tblwrap{overflow-x:auto; border-radius:12px; box-shadow:0 1px 6px rgba(31,56,100,.10); background:var(--card);}
+  table{width:100%; border-collapse:collapse; font-size:.83rem;}
+  thead th{background:var(--navy); color:#fff; text-align:left; padding:10px 12px; font-size:.78rem; letter-spacing:.03em; text-transform:uppercase;}
+  tbody td{padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top;}
+  tbody tr:nth-child(even){background:#F2F6FB;}
+  tbody tr:hover{background:var(--lblue);}
+  td .tag{display:inline-block; background:var(--lblue); color:var(--navy); border-radius:20px; padding:2px 10px; font-size:.72rem; font-weight:600; margin:1px 2px 1px 0; white-space:nowrap;}
+  td .tag.or{background:var(--lorange); color:var(--orange);}
+  td .tag.gr{background:var(--lgreen); color:var(--green);}
+  td .tag.rd{background:var(--lred); color:var(--red);}
+  .up{color:var(--green); font-weight:700;} .down{color:var(--blue); font-weight:700;}
+
+  /* ===== OPERATING MODEL DIAGRAM ===== */
+  .om{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:18px;}
+  .om .center{grid-column:1/3; justify-self:center; background:var(--navy); color:#fff; border-radius:14px; padding:18px 34px; text-align:center; box-shadow:0 4px 14px rgba(31,56,100,.35); position:relative;}
+  .om .center h4{font-size:1.05rem; letter-spacing:.05em;}
+  .om .center p{font-size:.78rem; color:#C9D6EC; margin-top:4px;}
+  .face{background:var(--card); border-radius:14px; overflow:hidden; box-shadow:0 2px 10px rgba(31,56,100,.12); border-top:5px solid;}
+  .face .hd{padding:12px 16px; color:#fff; font-weight:700; font-size:.9rem; display:flex; justify-content:space-between; align-items:center;}
+  .face .hd .why{font-size:.7rem; font-weight:400; font-style:italic; opacity:.9;}
+  .face ul{list-style:none; padding:12px 16px;}
+  .face li{font-size:.82rem; padding:4px 0 4px 18px; position:relative;}
+  .face li::before{content:"▸"; position:absolute; left:0; font-weight:700;}
+  .f1{border-color:var(--blue);} .f1 .hd{background:var(--blue);} .f1 li::before{color:var(--blue);}
+  .f2{border-color:var(--orange);} .f2 .hd{background:var(--orange);} .f2 li::before{color:var(--orange);}
+  .f3{border-color:var(--green); grid-column:1/3; max-width:560px; justify-self:center; width:100%;} .f3 .hd{background:var(--green);} .f3 li::before{color:var(--green);}
+
+  /* ===== INTERVENTION CARDS ===== */
+  .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:16px;}
+  .icard{background:var(--card); border-radius:12px; box-shadow:0 1px 6px rgba(31,56,100,.10); padding:16px 18px; border-left:5px solid var(--blue); display:flex; flex-direction:column; gap:8px;}
+  .icard .top{display:flex; align-items:center; gap:10px;}
+  .icard .idb{background:var(--navy); color:#fff; font-weight:700; border-radius:8px; padding:3px 10px; font-size:.8rem;}
+  .icard h4{font-size:.98rem; color:var(--navy);}
+  .icard p.does{font-size:.83rem; color:#333;}
+  .icard .meta{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:6px; border-top:1px dashed var(--line);}
+  .pill{font-size:.7rem; border-radius:20px; padding:2px 10px; font-weight:600;}
+  .pill.who{background:var(--lblue); color:var(--navy);}
+  .pill.psy{background:var(--lorange); color:var(--orange);}
+  .pill.met{background:var(--lgreen); color:var(--green);}
+
+  /* ===== ESCALATION LADDER ===== */
+  .ladder{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:16px; position:relative;}
+  .ladder::after{content:""; position:absolute; left:2%; right:2%; bottom:26px; height:4px; background:linear-gradient(90deg,var(--blue),var(--orange),var(--red)); border-radius:2px; z-index:0;}
+  .step{display:flex; flex-direction:column; gap:8px; position:relative; z-index:1;}
+  .step .box{background:var(--card); border-radius:12px; border-top:5px solid; padding:12px 12px 10px; box-shadow:0 2px 8px rgba(31,56,100,.12); flex:1;}
+  .step .box b{display:block; font-size:.8rem; margin-bottom:5px;}
+  .step .box p{font-size:.75rem; color:#333;}
+  .step .trig{font-size:.72rem; font-style:italic; color:var(--grey); text-align:center; min-height:32px;}
+  .step .day{align-self:center; background:var(--navy); color:#fff; font-weight:700; font-size:.78rem; border-radius:8px; padding:6px 14px;}
+  .s1 .box{border-color:var(--blue);} .s1 .box b{color:var(--blue);}
+  .s2 .box{border-color:var(--blue);} .s2 .box b{color:var(--blue);}
+  .s3 .box{border-color:var(--orange);} .s3 .box b{color:var(--orange);}
+  .s4 .box{border-color:var(--orange);} .s4 .box b{color:var(--orange);}
+  .s5 .box{border-color:var(--red);} .s5 .box b{color:var(--red);}
+
+  /* ===== CALLOUT ===== */
+  .callout{background:var(--lorange); border-left:5px solid var(--orange); border-radius:0 10px 10px 0; padding:12px 18px; font-size:.88rem; margin:14px 0; max-width:1000px;}
+  .callout.blue{background:var(--lblue); border-color:var(--blue);}
+  .callout.green{background:var(--lgreen); border-color:var(--green);}
+
+  /* ===== PHASE TIMELINE ===== */
+  .phases{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px;}
+  .phase{background:var(--card); border-radius:12px; box-shadow:0 2px 8px rgba(31,56,100,.12); overflow:hidden;}
+  .phase .ph{padding:12px 16px; color:#fff; font-weight:700; font-size:.9rem;}
+  .phase:nth-child(1) .ph{background:var(--blue);} .phase:nth-child(2) .ph{background:var(--orange);} .phase:nth-child(3) .ph{background:var(--green);}
+  .phase .bd{padding:14px 16px; font-size:.82rem; display:flex; flex-direction:column; gap:8px;}
+  .phase .bd b{color:var(--navy); font-size:.75rem; text-transform:uppercase; letter-spacing:.04em;}
+
+  /* ===== GUARDRAILS ===== */
+  .guards{display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:14px;}
+  .guard{background:var(--card); border-radius:12px; box-shadow:0 1px 6px rgba(31,56,100,.10); padding:14px 16px; border-left:5px solid var(--red);}
+  .guard b{color:var(--red); font-size:.85rem; display:block; margin-bottom:4px;}
+  .guard p{font-size:.82rem;}
+
+  .totop{position:fixed; right:22px; bottom:22px; background:var(--orange); color:#fff; text-decoration:none; border-radius:50%; width:44px; height:44px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; box-shadow:0 4px 12px rgba(0,0,0,.3);}
+
+  @media(max-width:860px){
+    .ladder{grid-template-columns:1fr;} .ladder::after{display:none;}
+    .om{grid-template-columns:1fr;} .om .center,.f3{grid-column:1;}
+    .phases{grid-template-columns:1fr;}
+    header.hero{padding:30px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <span class="brand">Agentic Rigor Strategy</span>
+  <a href="#problem">1 Problem</a>
+  <a href="#model">2 Operating Model</a>
+  <a href="#stack">3 Interventions</a>
+  <a href="#ladder">3.1 Escalation</a>
+  <a href="#sla">3.2 SLA Clock</a>
+  <a href="#fake">4 Fake Leads</a>
+  <a href="#diversion">5 Diversion</a>
+  <a href="#diagnosis">6 Diagnosis</a>
+  <a href="#guardrails">7 Guardrails</a>
+  <a href="#metrics">8 Metrics</a>
+  <a href="#phasing">9 Phasing</a>
+</div></nav>
+
+<div class="page">
+
+<header class="hero" id="top">
+  <h1>Agentic AI Intervention Strategy</h1>
+  <p class="sub">Restoring follow-up rigor on unprocessed MSME-LAP cases — designed around human psychology</p>
+  <p class="meta">NBFC Lending Operations · Definition Document (Pre-Implementation) · July 2026</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><b>&lt; 1 → &gt; 1.5</b><span>SM productivity target (files / month)</span></div>
+    <div class="hero-stat"><b>10</b><span>Core interventions, each tied to a psych lever</span></div>
+    <div class="hero-stat"><b>2</b><span>Integrity playbooks: fake leads &amp; diversion</span></div>
+    <div class="hero-stat"><b>3</b><span>Rollout phases with proof gates</span></div>
+  </div>
+</header>
+
+<!-- ============ 1 PROBLEM ============ -->
+<section id="problem">
+  <div class="h2row"><span class="secnum">1</span><h2>Problem Snapshot — What Leaks and Why</h2></div>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Observed symptom</th><th>Root cause</th><th>Psychological driver</th><th>Countered by</th></tr></thead>
+    <tbody>
+      <tr><td>Cases stall silently after login; leak across dept handoffs</td><td>No single owner of the file — each dept owns only its stage</td><td>Diffusion of responsibility (“it’s with credit/legal”)</td><td><a href="#stack"><span class="tag">I-2 forced next action</span></a> <a href="#sla"><span class="tag">I-9 SLA clocks</span></a></td></tr>
+      <tr><td>SMs abandon effortful files (legal query, valuation dispute, missing banking)</td><td>Fresh lead = quick reward; stuck file = slow, uncertain reward</td><td>Effort discounting; learned helplessness (“credit will reject anyway”)</td><td><a href="#stack"><span class="tag">I-1 agent does drudgery</span></a> <a href="#stack"><span class="tag">I-3 ranked queue</span></a> <a href="#stack"><span class="tag">I-4 progress framing</span></a></td></tr>
+      <tr><td>Supervisors miss regular follow-ups</td><td>8–12 SMs × 100+ files; follow-up depends on memory</td><td>Attention scarcity</td><td><a href="#ladder"><span class="tag">I-7 exception-only escalation</span></a></td></tr>
+      <tr><td>Fake leads: CIBIL pulled on “knowns” to show lead numbers</td><td>Lead-count targets reward volume, not quality</td><td>Target gaming (Goodhart’s law)</td><td><a href="#fake"><span class="tag or">§4 verification + quality targets</span></a></td></tr>
+      <tr><td>Stalled cases quietly referred to a competitor for a payout</td><td>SM is sole bridge to customer; deal seen as dead; near-zero detection risk</td><td>Learned helplessness + low perceived detection probability</td><td><a href="#diversion"><span class="tag or">§5 institutional contact + look-back</span></a></td></tr>
+      <tr><td>SM productivity &lt; 1 disbursed file / month</td><td>All of the above compounding</td><td>—</td><td><span class="tag gr">Full stack; &gt; 1.5 by Phase 3</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ============ 2 OPERATING MODEL ============ -->
+<section id="model">
+  <div class="h2row"><span class="secnum">2</span><h2>Operating Model — One Agent, Three Faces</h2></div>
+  <p class="lead">Both integrity problems exist because the SM holds an <em>information monopoly</em> over the customer. The agent breaks that monopoly while doing enough useful work that the salesforce adopts it willingly.</p>
+  <div class="om">
+    <div class="center"><h4>AGENTIC CASE SHEPHERD</h4><p>One agent instance per loan file · owns the file end-to-end across departments</p></div>
+    <div class="face f1">
+      <div class="hd">FACE 1 · ASSISTANT <span class="why">earns adoption</span></div>
+      <ul><li>Chases valuer / lawyer / customer directly</li><li>Drafts messages &amp; credit-query replies</li><li>Pre-computes counter-offer terms</li><li>AA banking pull + auto-summary for credit</li></ul>
+    </div>
+    <div class="face f2">
+      <div class="hd">FACE 2 · CUSTOMER CHANNEL <span class="why">breaks the info monopoly</span></div>
+      <ul><li>24-hr verification call on every lead</li><li>Institutional contact at conditional approval (closes the diversion window)</li><li>Proactive status updates to borrower</li></ul>
+    </div>
+    <div class="face f3">
+      <div class="hd">FACE 3 · PATTERN READER <span class="why">targets consequences</span></div>
+      <ul><li>Exception-only supervisor escalation with context packets</li><li>Per-SM behavior signatures · individual vs situational diagnosis</li><li>Auto-prepared weekly 1:1 review packs</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 STACK ============ -->
+<section id="stack">
+  <div class="h2row"><span class="secnum">3</span><h2>Core Intervention Stack</h2></div>
+  <div class="cards">
+    <div class="icard"><div class="top"><span class="idb">I-1</span><h4>Do-the-work assistant</h4></div>
+      <p class="does">Chases valuer / lawyer / customer (WhatsApp + calls); drafts customer messages and credit-query replies; pulls banking via Account Aggregator and auto-summarises; one-tap actions from WhatsApp.</p>
+      <div class="meta"><span class="pill who">SM · Credit</span><span class="pill psy">Effort is the enemy — make right action easiest</span><span class="pill met">Stage TAT · actions per nudge</span></div></div>
+    <div class="icard"><div class="top"><span class="idb">I-2</span><h4>Forced next action</h4></div>
+      <p class="does">No file exists without next action + owner + date. If actionless &gt; 24 hrs, the agent assigns one and notifies the owner.</p>
+      <div class="meta"><span class="pill who">All depts</span><span class="pill psy">Kills diffusion of responsibility</span><span class="pill met">% files with live next action → 100%</span></div></div>
+    <div class="icard"><div class="top"><span class="idb">I-3</span><h4>Daily top-3 queue</h4></div>
+      <p class="does">Morning digest of 3 actions ranked by conversion likelihood × ticket size ÷ effort remaining — makes stuck-but-winnable files attractive.</p>
+      <div class="meta"><span class="pill who">SM · Credit</span><span class="pill psy">Counters choice overload &amp; fresh-lead bias</span><span class="pill met">Nudge-to-action rate</span></div></div>
+    <div class="icard"><div class="top"><span class="idb">I-4</span><h4>Progress framing</h4></div>
+      <p class="does">“This ₹22L file is 80% complete — only legal pending.” Never “12 days old.”</p>
+      <div class="meta"><span class="pill who">SM</span><span class="pill psy">Goal-gradient / Zeigarnik effect</span><span class="pill met">Revival rate of &gt;70%-complete files</span></div></div>
+    <div class="icard"><div class="top"><span class="idb">I-5</span><h4>Personal loss framing</h4></div>
+      <p class="does">“Incentive at risk this month from untouched files: ₹14,600. File #482 dies in 48 hrs.”</p>
+      <div class="meta"><span class="pill who">SM</span><span class="pill psy">Loss aversion — specific, personal, time-bound</span><span class="pill met">Response rate to at-risk alerts</span></div></div>
+    <div class="icard"><div class="top"><span class="idb">I-6</span><h4>Authored commitments</h4></div>
+      <p class="does">A stall requires a stated reason + self-chosen recommit date; the agent holds the SM to their own date. Snooze exists but is finite and visible.</p>
+      <div class="meta"><span class="pill who">SM · Credit</span><span class="pill psy">Commitment &amp; consistency; no silent drops</span><span class="pill met">Commitment-kept rate</span></div></div>
+    <div class="icard"><div class="top"><span class="idb">I-7</span><h4>Exception-only supervisor escalation</h4></div>
+      <p class="does">Supervisor sees only broken commitments and SLA breaches, each with a 2-minute context packet + suggested action; weekly 1:1 agenda auto-prepared per SM.</p>
+      <div class="meta"><span class="pill who">Supervisor</span><span class="pill psy">Respects attention scarcity; removes prep cost</span><span class="pill met">Escalations closed &lt; 48 hrs</span></div></div>
+    <div class="icard"><div class="top"><span class="idb">I-8</span><h4>Social recognition</h4></div>
+      <p class="does">Team stall-recovery leaderboard; “saves” flagged to leadership; clean-pipeline streaks. Negative comparisons stay private.</p>
+      <div class="meta"><span class="pill who">SM teams</span><span class="pill psy">Status &gt; small incentives; no public shaming</span><span class="pill met">Stall-recovery rate</span></div></div>
+    <div class="icard"><div class="top"><span class="idb">I-9</span><h4>Cross-dept SLA clocks</h4></div>
+      <p class="does">Visible per-stage clock (sales / credit / technical / legal / ops); the same nudge–commit–escalate machinery applies to every department.</p>
+      <div class="meta"><span class="pill who">All depts</span><span class="pill psy">Precise accountability; perceived fairness</span><span class="pill met">Stage-wise SLA breach %</span></div></div>
+    <div class="icard"><div class="top"><span class="idb">I-10</span><h4>Customer-facing agent</h4></div>
+      <p class="does">Proactive status updates and next-step requests to the borrower — an informed customer creates internal pull no dashboard can.</p>
+      <div class="meta"><span class="pill who">Customer</span><span class="pill psy">External pressure</span><span class="pill met">Customer response rate · NPS</span></div></div>
+  </div>
+
+  <h3 id="ladder">3.1 Escalation Ladder — the rigor loop on every pending file</h3>
+  <div class="ladder">
+    <div class="step s1">
+      <div class="box"><b>Agent nudge</b><p>Top-3 queue; file framed as “% complete”; personal incentive at risk.</p></div>
+      <div class="trig">No action logged on pending file</div><div class="day">DAY 0</div></div>
+    <div class="step s2">
+      <div class="box"><b>Authored commitment</b><p>SM states reason + own next-action date — logged, visible.</p></div>
+      <div class="trig">Nudge ignored</div><div class="day">DAY 2</div></div>
+    <div class="step s3">
+      <div class="box"><b>Supervisor packet</b><p>2-minute context: history, reason given, suggested action. Exception-only.</p></div>
+      <div class="trig">Commitment broken</div><div class="day">DAY 4</div></div>
+    <div class="step s4">
+      <div class="box"><b>Second human</b><p>Case reassigned / retention desk takes over customer contact.</p></div>
+      <div class="trig">Still stalled</div><div class="day">DAY 7</div></div>
+    <div class="step s5">
+      <div class="box"><b>Integrity review</b><p>Anomaly evidence packet to integrity function. Statistics flag — humans conclude.</p></div>
+      <div class="trig">Pattern detected across files</div><div class="day">ONGOING</div></div>
+  </div>
+
+  <h3 id="sla">3.2 Stage SLA Clock <span style="font-weight:400;color:var(--grey);font-size:.85rem;">(indicative — calibrate to own TAT data)</span></h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Stage</th><th>Owner</th><th>SLA</th><th>Agent action at 80% of SLA</th><th>Agent action on breach</th></tr></thead>
+    <tbody>
+      <tr><td>Lead verification call</td><td><span class="tag gr">Agent (auto)</span></td><td>24 hrs</td><td>—</td><td>Lead flagged unverified; excluded from target credit</td></tr>
+      <tr><td>Login + document collection</td><td><span class="tag">SM</span></td><td>3 days</td><td>Doc checklist reminder to SM + customer</td><td><a href="#ladder">Escalation ladder Day 0 starts</a></td></tr>
+      <tr><td>Banking analysis</td><td><span class="tag">Credit</span></td><td>2 days</td><td>Auto-summary already delivered; nudge analyst</td><td>Credit supervisor packet</td></tr>
+      <tr><td>Personal discussion (PD)</td><td><span class="tag">Credit</span></td><td>3 days</td><td>Propose 2 PD slots to customer + analyst</td><td>Credit supervisor packet</td></tr>
+      <tr><td>Technical valuation</td><td><span class="tag or">Vendor/Tech</span></td><td>4 days</td><td>Agent chases valuer directly</td><td>Vendor SLA report; alternate valuer suggested</td></tr>
+      <tr><td>Legal opinion</td><td><span class="tag or">Vendor/Legal</span></td><td>5 days</td><td>Agent chases lawyer; missing-doc list to SM</td><td>Vendor SLA report; regional legal head alert</td></tr>
+      <tr><td>Credit query resolution</td><td><span class="tag">SM ↔ Credit</span></td><td>2 days/query</td><td>Draft reply pre-filled from file for SM</td><td>Both-side escalation (query aging is credit’s stall too)</td></tr>
+      <tr><td>Conditional-approval negotiation</td><td><span class="tag">SM + Retention</span></td><td>5 days</td><td>Counter-offer terms pre-computed; institutional call to customer</td><td><a href="#diversion">Retention desk takes over (§5)</a></td></tr>
+      <tr><td>Ops disbursement</td><td><span class="tag">Ops</span></td><td>3 days</td><td>Pending-doc list auto-circulated</td><td>Ops supervisor packet</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ============ 4 FAKE LEADS ============ -->
+<section id="fake">
+  <div class="h2row"><span class="secnum">4</span><h2>Playbook A — Fake Leads (CIBIL pulls on knowns)</h2></div>
+  <div class="callout"><b>Principle: deterrence beats detection.</b> Once every lead is known to get an independent 24-hour verification contact, the expected cost of faking exceeds the benefit.</div>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Signal</th><th>Data source</th><th>Agent action</th><th>Escalation threshold</th></tr></thead>
+    <tbody>
+      <tr><td>Customer denies loan interest on 24-hr verification call</td><td>Agent call / WhatsApp outcome</td><td>Lead voided from target credit; logged to SM signature</td><td><span class="tag rd">2 in a quarter → supervisor review</span></td></tr>
+      <tr><td>CIBIL pulled, zero document movement for 72 hrs</td><td>LOS timeline + bureau log</td><td>Verification re-attempt; file auto-parked as “unverified”</td><td><span class="tag rd">3 in a month → signature flag</span></td></tr>
+      <tr><td>Referrer phone / address clusters across multiple leads</td><td>Lead metadata link analysis</td><td>Cluster report attached to each member lead</td><td><span class="tag rd">Any cluster ≥ 3 leads → evidence packet</span></td></tr>
+      <tr><td>Lead spike in final 3 days of target period</td><td>LOS lead-creation timestamps</td><td>Spike leads get priority verification</td><td><span class="tag rd">2 consecutive months → 1:1 item</span></td></tr>
+      <tr><td>CIBIL-pull-to-login conversion far below branch norm</td><td>Bureau logs vs LOS</td><td>Included in monthly SM behavior signature</td><td><span class="tag rd">Statistical outlier vs branch/vintage peers</span></td></tr>
+    </tbody>
+  </table></div>
+  <h3>4.1 Root-cause fixes — without these, the agent just teaches better faking</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th style="width:30%">Fix</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td><b>Retire lead-count targets</b></td><td>Shift SM scorecard weight to quality metrics: verified-engagement rate, login-to-sanction rate, disbursal count</td></tr>
+      <tr><td><b>Announce the verification policy</b></td><td>“Every lead is contacted within 24 hours” communicated openly — the deterrent is the certainty, not the punishment</td></tr>
+      <tr><td><b>Cost visibility</b></td><td>Monthly report of bureau-pull cost wasted on never-progressed leads, by branch</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ============ 5 DIVERSION ============ -->
+<section id="diversion">
+  <div class="h2row"><span class="secnum">5</span><h2>Playbook B — Lead Diversion to Competitors</h2></div>
+  <div class="callout"><b>Diversion needs three conditions:</b> the SM believes the deal is dead here · negotiation effort is high · detection risk is near zero. Attack all three. Highest-risk window: <b>immediately after credit imposes conditions.</b></div>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Lever</th><th>Trigger / window</th><th>Agent action</th><th>Detection &amp; consequence</th></tr></thead>
+    <tbody>
+      <tr><td><b>Close the window</b></td><td>Credit issues conditional approval</td><td>Customer hears conditions from the institution within hours — agent call/WhatsApp explaining conditions + the path to approval. SM no longer the sole bridge</td><td>—</td></tr>
+      <tr><td><b>Lower the effort</b></td><td>Negotiation-stage file idle 48 hrs</td><td>Agent pre-computes restructure options that satisfy credit (lower LTV, co-applicant, tenor) and hands SM a ready script</td><td>—</td></tr>
+      <tr><td><b>Make honesty pay more</b></td><td>Conditional case revived to disbursal</td><td>Revival bonus weighted above fresh-file sourcing in SM incentives</td><td>—</td></tr>
+      <tr><td><b>Second human</b></td><td>Stall persists 48 hrs post-conditions</td><td>Auto-route to supervisor / central retention desk — a second relationship with the customer</td><td>One person can no longer quietly kill a file</td></tr>
+      <tr><td><b>Look-back with teeth</b></td><td>Case withdrawn / expired post-approval</td><td>Exit call to customer (“what made you drop?”); bureau re-pull at 45–60 days</td><td><span class="tag rd">New competitor mortgage tradeline → logged to SM signature</span>; policy announced, so certainty deters</td></tr>
+      <tr><td><b>Pattern consequence</b></td><td>≥ 2 look-back hits for one SM</td><td>Evidence packet compiled</td><td><span class="tag rd">Integrity function investigates; agent never accuses</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ============ 6 DIAGNOSIS ============ -->
+<section id="diagnosis">
+  <div class="h2row"><span class="secnum">6</span><h2>Individual vs Situational — Diagnose Before Acting</h2></div>
+  <div class="callout blue">Baseline every signal against <b>peers, branch, and vintage</b> — never against absolutes. A branch-wide pattern is a process problem; a single-SM deviation is a conduct question.</div>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Pattern observed</th><th>Likely diagnosis</th><th>System response</th><th>Human owner</th></tr></thead>
+    <tbody>
+      <tr><td>Entire branch stalls at same stage (e.g., legal)</td><td><span class="tag gr">Situational</span> vendor or local process issue</td><td>Root-cause report; vendor SLA action; do <b>not</b> police individuals</td><td>Ops / Regional head</td></tr>
+      <tr><td>One SM deviates sharply from branch norm on fake-lead or diversion signals</td><td><span class="tag rd">Individual</span></td><td>Quietly raise verification tier; compile evidence packet</td><td>Supervisor → Integrity</td></tr>
+      <tr><td>Stall reasons cluster on one credit condition across regions</td><td><span class="tag">Product / policy</span></td><td>Credit-policy feedback report from authored stall reasons</td><td>Credit policy head</td></tr>
+      <tr><td>New-joiner SM with low activity, no integrity signals</td><td><span class="tag gr">Capability, not intent</span></td><td>Coaching nudges; buddy assignment; lighter framing</td><td>Supervisor</td></tr>
+      <tr><td>Seasonal / geographic dip across teams</td><td><span class="tag gr">Situational</span></td><td>Recalibrate targets and SLAs for the period</td><td>Business head</td></tr>
+    </tbody>
+  </table></div>
+  <h3>6.1 Risk-tiered treatment — underwriting applied inward</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Trust tier</th><th>Criteria</th><th>Nudge intensity</th><th>Verification intensity</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag gr">Trusted</span></td><td>Clean 6-month signature; high commitment-kept rate</td><td>Light touch; more autonomy; recognition-heavy</td><td>Standard 24-hr call only</td></tr>
+      <tr><td><span class="tag">Standard</span></td><td>Default for all</td><td>Full ladder (<a href="#ladder">§3.1</a>)</td><td>Standard + random look-backs</td></tr>
+      <tr><td><span class="tag rd">Elevated</span></td><td>Signature flags pending review</td><td>Full ladder, faster escalation</td><td>Enhanced: agent-direct customer contact on all files; look-back on every lost case — experienced as “more support”, not accusation</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ============ 7 GUARDRAILS ============ -->
+<section id="guardrails">
+  <div class="h2row"><span class="secnum">7</span><h2>Guardrails — How This System Fails If Misdesigned</h2></div>
+  <div class="guards">
+    <div class="guard"><b>Alert fatigue → agent gets muted</b><p>Max 3 nudges / person / day; escalate through channel and tone, never volume.</p></div>
+    <div class="guard"><b>Seen as surveillance → subverted</b><p>Assistant features (I-1) ship first and visibly save time; keep ≥ 3:1 ratio of recognition to corrective messages.</p></div>
+    <div class="guard"><b>Goodhart on activity</b><p>Never reward “actions logged”; reward outcomes only — conversion, TAT, stall recovery.</p></div>
+    <div class="guard"><b>False accusation destroys trust</b><p>Agent flags with evidence; humans conclude. No automated integrity labels, ever.</p></div>
+    <div class="guard"><b>Legitimate waits criminalised</b><p>Finite, visible snooze with authored reason (customer travelling, title dispute) — a sanctioned path prevents invented ones.</p></div>
+    <div class="guard"><b>Rigor only on sales → seen as unfair</b><p>Credit, technical, legal and ops run on the same clocks and ladders (I-9).</p></div>
+  </div>
+</section>
+
+<!-- ============ 8 METRICS ============ -->
+<section id="metrics">
+  <div class="h2row"><span class="secnum">8</span><h2>Measurement Dashboard</h2></div>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Metric</th><th>Definition</th><th>Direction</th><th>Cadence</th><th>Owner</th></tr></thead>
+    <tbody>
+      <tr><td><b>Files idle &gt; 7 days</b></td><td>% of active pipeline with no logged action in 7 days</td><td class="down">↓ toward &lt; 5%</td><td>Weekly</td><td>Supervisors</td></tr>
+      <tr><td><b>Login-to-disbursal conversion</b></td><td>Disbursed ÷ logged-in, cohort basis</td><td class="up">↑</td><td>Monthly</td><td>Business head</td></tr>
+      <tr><td><b>Stage TAT</b></td><td>Median days per stage, by dept</td><td class="down">↓</td><td>Weekly</td><td>Dept heads</td></tr>
+      <tr><td><b>Commitment-kept rate</b></td><td>Authored recommit dates met ÷ made</td><td class="up">↑ toward &gt; 85%</td><td>Weekly</td><td>Supervisors</td></tr>
+      <tr><td><b>Stall-recovery rate</b></td><td>Files idle &gt; 7 days later disbursed ÷ total stalled</td><td class="up">↑</td><td>Monthly</td><td>Business head</td></tr>
+      <tr><td><b>Fake-lead rate</b></td><td>Verification failures ÷ leads created</td><td class="down">↓</td><td>Monthly</td><td>Integrity</td></tr>
+      <tr><td><b>Post-approval competitor loss</b></td><td>Look-back hits ÷ lost conditional approvals</td><td class="down">↓</td><td>Quarterly</td><td>Integrity</td></tr>
+      <tr><td><b>SM productivity</b></td><td>Disbursed files / SM / month</td><td class="up">&lt; 1 → &gt; 1.5</td><td>Monthly</td><td>Business head</td></tr>
+      <tr><td><b>Nudge-to-action rate</b></td><td>Nudges acted on within 24 hrs ÷ sent</td><td class="up">↑ (health check for fatigue)</td><td>Weekly</td><td>Program owner</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ============ 9 PHASING ============ -->
+<section id="phasing">
+  <div class="h2row"><span class="secnum">9</span><h2>Phasing — Definition of Sequence, Not Implementation Plan</h2></div>
+  <div class="phases">
+    <div class="phase">
+      <div class="ph">P1 · 0–90 days</div>
+      <div class="bd">
+        <div><b>Scope</b><br>Pilot: 2 branches, MSME-LAP only</div>
+        <div><b>Interventions live</b><br>I-2, I-3, I-6, I-7 + 24-hr verification calls</div>
+        <div><b>Must prove</b><br>Idle-file % halves; SMs use the queue voluntarily; fake-lead deterrence visible</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="ph">P2 · 90–180 days</div>
+      <div class="bd">
+        <div><b>Scope</b><br>Pilot branches, full depth</div>
+        <div><b>Interventions live</b><br>I-1 chase automation, I-9 cross-dept clocks, full diversion playbook (§5)</div>
+        <div><b>Must prove</b><br>Stage TAT compression; conditional-approval save rate up</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="ph">P3 · 180+ days</div>
+      <div class="bd">
+        <div><b>Scope</b><br>Region-wide rollout</div>
+        <div><b>Interventions live</b><br>Behavior signatures, risk tiers, incentive re-weighting, leaderboards (I-5, I-8, §6)</div>
+        <div><b>Must prove</b><br>SM productivity &gt; 1; sustained without novelty effect</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout green" style="margin-top:18px;"><b>Open decisions before implementation:</b> final SLA values (calibrate to 6-month TAT history) · incentive re-weighting approval (revival bonus, quality-weighted targets) · which function owns integrity review · snooze caps per role.</div>
+</section>
+
+</div>
+<a href="#top" class="totop" title="Back to top">↑</a>
+</body>
+</html>
