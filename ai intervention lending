@@ -104,10 +104,10 @@
   .callout.green{background:var(--lgreen); border-color:var(--green);}
 
   /* ===== PHASE TIMELINE ===== */
-  .phases{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px;}
+  .phases{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:16px;}
   .phase{background:var(--card); border-radius:12px; box-shadow:0 2px 8px rgba(31,56,100,.12); overflow:hidden;}
   .phase .ph{padding:12px 16px; color:#fff; font-weight:700; font-size:.9rem;}
-  .phase:nth-child(1) .ph{background:var(--blue);} .phase:nth-child(2) .ph{background:var(--orange);} .phase:nth-child(3) .ph{background:var(--green);}
+  .phase:nth-child(1) .ph{background:var(--navy);} .phase:nth-child(2) .ph{background:var(--blue);} .phase:nth-child(3) .ph{background:var(--orange);} .phase:nth-child(4) .ph{background:var(--green);}
   .phase .bd{padding:14px 16px; font-size:.82rem; display:flex; flex-direction:column; gap:8px;}
   .phase .bd b{color:var(--navy); font-size:.75rem; text-transform:uppercase; letter-spacing:.04em;}
 
@@ -131,6 +131,7 @@
 
 <nav><div class="wrap">
   <span class="brand">Agentic Rigor Strategy</span>
+  <a href="#exec">0 Executive View</a>
   <a href="#problem">1 Problem</a>
   <a href="#model">2 Operating Model</a>
   <a href="#stack">3 Interventions</a>
@@ -142,6 +143,9 @@
   <a href="#guardrails">7 Guardrails</a>
   <a href="#metrics">8 Metrics</a>
   <a href="#phasing">9 Phasing</a>
+  <a href="#extensions">10 Extensions</a>
+  <a href="#compliance">11 Compliance</a>
+  <a href="#channels">12 Channels</a>
 </div></nav>
 
 <div class="page">
@@ -154,9 +158,39 @@
     <div class="hero-stat"><b>&lt; 1 → &gt; 1.5</b><span>SM productivity target (files / month)</span></div>
     <div class="hero-stat"><b>10</b><span>Core interventions, each tied to a psych lever</span></div>
     <div class="hero-stat"><b>2</b><span>Integrity playbooks: fake leads &amp; diversion</span></div>
-    <div class="hero-stat"><b>3</b><span>Rollout phases with proof gates</span></div>
+    <div class="hero-stat"><b>4</b><span>Rollout phases with proof gates (P0–P3)</span></div>
   </div>
 </header>
+
+<!-- ============ 0 EXECUTIVE VIEW ============ -->
+<section id="exec">
+  <div class="h2row"><span class="secnum">0</span><h2>Executive View — Read This First</h2></div>
+  <div class="callout" style="font-size:1rem;"><b>The agent’s job is to make the honest, rigorous path the laziest path.</b> The incentive plan, supervisor accountability, and the operating-model decision are prerequisites — not afterthoughts. Everything after this page is a menu; strategy is what we refuse to build first.</div>
+
+  <h3>0.1 Five hard truths this plan must respect</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th style="width:26%">Truth</th><th>Consequence for the plan</th></tr></thead>
+    <tbody>
+      <tr><td><b>Focus beats completeness</b></td><td>The first 90 days build exactly four things (0.2). Leaderboards, coaching engine, ML confidence scoring and dead-stock revival are deliberately deferred — not because they are wrong, but because a pilot that ships everything proves nothing.</td></tr>
+      <tr><td><b>The operating model may be the real problem</b></td><td>SM cradle-to-grave ownership is what makes fake leads and diversion possible. Evaluate the hunter/farmer split (<a href="#model">§2.1</a>) before investing heavily in making the current model more rigorous — we may be building a better whip for a horse that should be replaced.</td></tr>
+      <tr><td><b>Incentive math is the load-bearing wall</b></td><td>If a fully-worked conditional-approval case pays the SM less than sourcing a fresh login, no nudge architecture survives contact. Phase 0 audits the actual payout curve; the agent amplifies incentives, it cannot replace them.</td></tr>
+      <tr><td><b>Supervisors decide whether this lives</b></td><td>Exception packets fix the supervisor’s <em>effort</em> problem, not their <em>motivation</em> problem. Tie supervisor variable pay to team funnel conversion. One supervisor visibly acting on one packet in week 2 builds more authority than a thousand nudges.</td></tr>
+      <tr><td><b>Data readiness gates everything</b></td><td>Most LOS setups lack event-level funnel data, and the real negotiation happens on SMs’ personal phones, invisible to any system. Phase 0 is instrumentation — and official channels must be the laziest path or the data layer becomes theater.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>0.2 First 90 days — build only these four</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th style="width:6%">#</th><th style="width:38%">Build</th><th>Why first</th></tr></thead>
+    <tbody>
+      <tr><td><b>1</b></td><td>Funnel event instrumentation + leakage P&amp;L baseline</td><td>Without event-level data the agent is blind and success is unmeasurable; the ₹ baseline is also the business case</td></tr>
+      <tr><td><b>2</b></td><td>24-hr verification calls on every lead (<a href="#fake">§4</a>)</td><td>Cheapest intervention, immediate fake-lead deterrence, and it starts breaking the SM information monopoly</td></tr>
+      <tr><td><b>3</b></td><td>Daily top-3 ranked queue (I-3)</td><td>The adoption hook — SMs experience the agent as useful before they experience it as accountable</td></tr>
+      <tr><td><b>4</b></td><td>Authored commitments + supervisor exception packets (I-6, I-7)</td><td>The rigor core: no silent drops, and supervision becomes cheap enough to actually happen</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout blue"><b>Run in parallel (decisions, not builds):</b> incentive payout-curve audit · supervisor variable-pay alignment · matched control branches with pre-registered metrics · pilot in a mid-performing branch with a respected manager — never the best or the worst.</div>
+</section>
 
 <!-- ============ 1 PROBLEM ============ -->
 <section id="problem">
@@ -193,6 +227,20 @@
       <ul><li>Exception-only supervisor escalation with context packets</li><li>Per-SM behavior signatures · individual vs situational diagnosis</li><li>Auto-prepared weekly 1:1 review packs</li></ul>
     </div>
   </div>
+
+  <h3>2.1 The operating-model decision — evaluate before scaling the rigor stack</h3>
+  <p class="lead">The deeper question this plan must answer: <em>should the SM own the file through disbursal at all?</em> The hunter/farmer split — SM sources and hands off at login to a dedicated fulfillment officer or pod — structurally removes both integrity problems. The agent makes this org design affordable for the first time: one fulfillment officer + agent can carry 3–4× the file load.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th style="width:16%">Dimension</th><th>Current: SM cradle-to-grave</th><th>Alternative: hunter/farmer split</th></tr></thead>
+    <tbody>
+      <tr><td><b>Ownership</b></td><td>SM owns lead → disbursal; grind competes with fresh-lead reward</td><td>SM sources; fulfillment officer owns login → disbursal — the grind is their only job</td></tr>
+      <tr><td><b>Fake leads</b></td><td>SM gains from showing lead numbers</td><td>Sourcing paid on verified logins that fulfillment accepts — faking becomes pointless</td></tr>
+      <tr><td><b>Diversion</b></td><td>SM is sole customer bridge at the negotiation stage</td><td>Fulfillment owns the customer post-login — the diversion window is <b>structurally closed, not policed</b></td></tr>
+      <tr><td><b>Supervision</b></td><td>Supervisor chases 8–12 SMs × mixed roles</td><td>Fulfillment pod is a small, measurable unit with one metric: conversion velocity</td></tr>
+      <tr><td><b>Cost</b></td><td>Status quo</td><td>Previously unaffordable; agent-augmented fulfillment changes the math</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout green"><b>Recommendation:</b> run one fulfillment-pod pilot in one branch during P1, alongside the rigor stack in the other branch — let the data pick the operating model before region-wide rollout.</div>
 </section>
 
 <!-- ============ 3 STACK ============ -->
@@ -344,6 +392,11 @@
     <div class="guard"><b>False accusation destroys trust</b><p>Agent flags with evidence; humans conclude. No automated integrity labels, ever.</p></div>
     <div class="guard"><b>Legitimate waits criminalised</b><p>Finite, visible snooze with authored reason (customer travelling, title dispute) — a sanctioned path prevents invented ones.</p></div>
     <div class="guard"><b>Rigor only on sales → seen as unfair</b><p>Credit, technical, legal and ops run on the same clocks and ladders (I-9).</p></div>
+    <div class="guard"><b>Rigor degrades underwriting</b><p>Track early delinquency of revived / negotiated files vs normal originations — the balancing metric that keeps the whole program honest.</p></div>
+    <div class="guard"><b>Fails socially before technically</b><p>Name the agent; ship WhatsApp-first; recruit 2–3 respected SMs as co-design champions in pilot branches; track tool-eNPS.</p></div>
+    <div class="guard"><b>Consequences never land → nudges become wallpaper</b><p>Authority is built by visible action, not messages: a supervisor must act on an exception packet in week 2. Track packet-to-action rate as a leading indicator.</p></div>
+    <div class="guard"><b>Evidence packet used for public punishment</b><p>Integrity outcomes must be quiet, procedural and visibly fair — one humiliating public firing and every SM starves the system of data permanently.</p></div>
+    <div class="guard"><b>Shadow process on personal phones</b><p>The real negotiation happens off-system today. Official channels must be the laziest path (one-tap, vernacular, pre-drafted); track in-channel contact share.</p></div>
   </div>
 </section>
 
@@ -362,6 +415,13 @@
       <tr><td><b>Post-approval competitor loss</b></td><td>Look-back hits ÷ lost conditional approvals</td><td class="down">↓</td><td>Quarterly</td><td>Integrity</td></tr>
       <tr><td><b>SM productivity</b></td><td>Disbursed files / SM / month</td><td class="up">&lt; 1 → &gt; 1.5</td><td>Monthly</td><td>Business head</td></tr>
       <tr><td><b>Nudge-to-action rate</b></td><td>Nudges acted on within 24 hrs ÷ sent</td><td class="up">↑ (health check for fatigue)</td><td>Weekly</td><td>Program owner</td></tr>
+      <tr><td><b>Early delinquency of revived files</b></td><td>30/60/90 DPD of revived / negotiated cohort vs normal originations</td><td>≈ parity <span class="tag rd">guardrail</span></td><td>Quarterly</td><td>Risk head</td></tr>
+      <tr><td><b>Pipeline retained through attrition</b></td><td>Files disbursed post-reassignment ÷ exiting SM’s live pipeline</td><td class="up">↑ toward &gt; 80%</td><td>Quarterly</td><td>Business head</td></tr>
+      <tr><td><b>Leakage P&amp;L</b></td><td>Rupee value lost per funnel stage (lead → login → sanction → disbursal)</td><td class="down">↓</td><td>Monthly</td><td>Program owner</td></tr>
+      <tr><td><b>Case-confidence accuracy</b></td><td>Predicted high/low confidence vs actual disbursal outcome (<a href="#channels">§12.3</a>)</td><td class="up">↑ (model health)</td><td>Monthly</td><td>Program owner</td></tr>
+      <tr><td><b>Voice-call containment</b></td><td>Customer calls completed by AI without human handoff ÷ attempted</td><td class="up">↑</td><td>Monthly</td><td>Program owner</td></tr>
+      <tr><td><b>In-channel contact share</b></td><td>Customer interactions via official channels ÷ total known interactions</td><td class="up">↑ (shadow-process check)</td><td>Monthly</td><td>Program owner</td></tr>
+      <tr><td><b>Packet-to-action rate</b></td><td>Exception packets acted on &lt; 48 hrs ÷ packets sent (leading indicator of system authority)</td><td class="up">↑ toward &gt; 80%</td><td>Weekly</td><td>Business head</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -369,33 +429,167 @@
 <!-- ============ 9 PHASING ============ -->
 <section id="phasing">
   <div class="h2row"><span class="secnum">9</span><h2>Phasing — Definition of Sequence, Not Implementation Plan</h2></div>
+  <p class="lead">Sequence follows <a href="#exec">§0</a>: prerequisites and instrumentation gate everything; the pilot ships four things only; ML and gamification are earned, not assumed. Every phase is measured against <em>matched control branches with pre-registered metrics</em>.</p>
   <div class="phases">
     <div class="phase">
-      <div class="ph">P1 · 0–90 days</div>
+      <div class="ph">P0 · 0–30 days</div>
       <div class="bd">
-        <div><b>Scope</b><br>Pilot: 2 branches, MSME-LAP only</div>
-        <div><b>Interventions live</b><br>I-2, I-3, I-6, I-7 + 24-hr verification calls</div>
-        <div><b>Must prove</b><br>Idle-file % halves; SMs use the queue voluntarily; fake-lead deterrence visible</div>
+        <div><b>Scope</b><br>Foundations</div>
+        <div><b>Live</b><br>Funnel event instrumentation · leakage P&amp;L baseline (₹) · incentive payout-curve audit · supervisor variable-pay alignment proposal · control branches + pre-registered metrics · compliance baseline (<a href="#compliance">§11</a>)</div>
+        <div><b>Must prove</b><br>Reliable event-level data; leakage quantified in rupees; incentive fix approved</div>
       </div>
     </div>
     <div class="phase">
-      <div class="ph">P2 · 90–180 days</div>
+      <div class="ph">P1 · 30–120 days</div>
+      <div class="bd">
+        <div><b>Scope</b><br>Pilot: 2 mid-performing branches, MSME-LAP only</div>
+        <div><b>Live</b><br>The four builds of <a href="#exec">§0.2</a>: verification calls, top-3 queue, authored commitments, exception packets · one fulfillment-pod pilot in one branch (§2.1) · SM champions co-design</div>
+        <div><b>Must prove</b><br>Idle-file % halves and <em>holds at month 3</em> (novelty-decay check); supervisors act on &gt; 80% of packets &lt; 48 hrs; pod vs rigor-stack comparison read</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="ph">P2 · 120–210 days</div>
       <div class="bd">
         <div><b>Scope</b><br>Pilot branches, full depth</div>
-        <div><b>Interventions live</b><br>I-1 chase automation, I-9 cross-dept clocks, full diversion playbook (§5)</div>
-        <div><b>Must prove</b><br>Stage TAT compression; conditional-approval save rate up</div>
+        <div><b>Live</b><br>I-1 chase automation · I-9 cross-dept clocks · full diversion playbook (§5) · rules-based confidence codes — no ML (<a href="#channels">§12.3</a>) · entry triage + channel analytics (§10.1) · nudge A/B tests (§10.6)</div>
+        <div><b>Must prove</b><br>Stage TAT compression; conditional-approval save rate up; in-channel contact share rising</div>
       </div>
     </div>
     <div class="phase">
-      <div class="ph">P3 · 180+ days</div>
+      <div class="ph">P3 · 210+ days</div>
       <div class="bd">
-        <div><b>Scope</b><br>Region-wide rollout</div>
-        <div><b>Interventions live</b><br>Behavior signatures, risk tiers, incentive re-weighting, leaderboards (I-5, I-8, §6)</div>
-        <div><b>Must prove</b><br>SM productivity &gt; 1; sustained without novelty effect</div>
+        <div><b>Scope</b><br>Region-wide rollout on the winning operating model</div>
+        <div><b>Live</b><br>Behavior signatures, risk tiers, incentive re-weighting, leaderboards (I-5, I-8, §6) · dead-stock revival (§10.4) · coaching engine (§10.5) · ML confidence scoring trained on P1–P2 labeled data</div>
+        <div><b>Must prove</b><br>Productivity &gt; 1 sustained two quarters; delinquency parity on revived files</div>
       </div>
     </div>
   </div>
-  <div class="callout green" style="margin-top:18px;"><b>Open decisions before implementation:</b> final SLA values (calibrate to 6-month TAT history) · incentive re-weighting approval (revival bonus, quality-weighted targets) · which function owns integrity review · snooze caps per role.</div>
+  <div class="callout green" style="margin-top:18px;"><b>Open decisions before implementation (in priority order):</b> incentive payout-curve redesign &amp; supervisor variable-pay alignment (<a href="#exec">§0</a>) · hunter/farmer pod pilot approval (<a href="#model">§2.1</a>) · control-branch selection &amp; pre-registered metrics · final SLA values (calibrate to 6-month TAT history) · which function owns integrity review · DPDP-compliant consent flows · voice-agent vendor &amp; vernacular coverage · snooze caps per role.</div>
+</section>
+
+<!-- ============ 10 EXTENSIONS ============ -->
+<section id="extensions">
+  <div class="h2row"><span class="secnum">10</span><h2>Plan Extensions — Upstream, Continuity, Revival</h2></div>
+
+  <h3>10.1 Upstream quality — stop bad files entering, don’t just chase them later</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th style="width:22%">Lever</th><th>What it does</th><th>Why it matters</th></tr></thead>
+    <tbody>
+      <tr><td><b>Entry triage score</b></td><td>Probability-of-approval computed before full processing; low-viability leads get a fast “no” or a pre-work checklist</td><td>Unwinnable files clog capacity and teach SMs futility — a root cause of learned helplessness</td></tr>
+      <tr><td><b>Channel quality analytics</b></td><td>Disbursal-weighted quality index per source: DSA, connector, digital, branch walk-in</td><td>Shifts sourcing effort and payout toward channels that actually convert</td></tr>
+      <tr><td><b>DSA / connector verification</b></td><td>Extend the <a href="#fake">§4 playbook</a> (24-hr verification, cluster analysis) to external channel partners</td><td>The fake-lead problem is not only internal — partner networks show the same behavior</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>10.2 Pipeline continuity — attrition-proofing</h3>
+  <div class="callout blue">When an SM exits, their pipeline usually dies with them. Because the agent holds <b>full file memory and the customer relationship</b> (<a href="#model">Face 2</a>), handover becomes instant reassignment: the incoming SM receives a ranked takeover queue with a context packet per file. <b>Metric:</b> % of exiting SM’s pipeline retained through to disbursal — target &gt; 80%.</div>
+
+  <h3>10.3 Customer friction &amp; voice of customer</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th style="width:26%">Element</th><th>Design</th></tr></thead>
+    <tbody>
+      <tr><td><b>Guided document collection</b></td><td>WhatsApp checklist with photo upload and validation; doorstep pickup scheduling — many stalls are customer-caused, not SM-caused</td></tr>
+      <tr><td><b>Voice-of-customer analytics</b></td><td>Exit-call reasons aggregated monthly: losses to competitor pricing / product terms are product feedback, not SM misconduct</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>10.4 Dead-stock revival</h3>
+  <div class="callout green">Mine <b>6–18-month-old rejected, expired and withdrawn cases</b>: re-score bureau, check changed circumstances (income growth, condition now meetable), and run agent-led re-approach campaigns. Revenue at near-zero sourcing cost — revived files carry the <a href="#guardrails">§7 delinquency guardrail</a>.</div>
+
+  <h3>10.5 Coaching &amp; vendor management — the signature’s developmental face</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th style="width:26%">Element</th><th>Design</th></tr></thead>
+    <tbody>
+      <tr><td><b>Personalized SM coaching</b></td><td>Failure-pattern analysis per SM: “your files die at PD stage at 2× branch norm — here are the 3 negotiation scripts that worked for peers.” Same data as the integrity signature, opposite framing</td></tr>
+      <tr><td><b>Vendor scorecards</b></td><td>Valuer / lawyer TAT and quality scores; auto-allocation to best performers; dual-vendor for high-value collateral</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>10.6 Experimentation layer</h3>
+  <div class="callout">The psychological levers are <b>hypotheses, not facts</b>. Build A/B testing into nudges from day one — loss framing vs progress framing, timing, channel — and measure which lever works per segment (vintage, region, product). Retire what doesn’t move the nudge-to-action rate.</div>
+</section>
+
+<!-- ============ 11 COMPLIANCE ============ -->
+<section id="compliance">
+  <div class="h2row"><span class="secnum">11</span><h2>Compliance &amp; Governance (India) — design in before pilot</h2></div>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Area</th><th>Requirement</th><th>Design implication</th></tr></thead>
+    <tbody>
+      <tr><td><b>Customer consent</b></td><td>Explicit consent for automated (agent) contact and channel preference</td><td>Consent captured at lead creation; opt-out honored immediately; agent identifies itself as automated</td></tr>
+      <tr><td><b>Data privacy (DPDP Act)</b></td><td>Purpose limitation, data minimisation, retention limits</td><td>Agent accesses file data need-to-know; defined retention for call logs and transcripts</td></tr>
+      <tr><td><b>RBI digital lending &amp; outsourcing guidelines</b></td><td>Accountability for automated customer interaction stays with the NBFC</td><td>Human escalation path always available; grievance mechanism; agent scripts owned by compliance</td></tr>
+      <tr><td><b>Fair Practices Code</b></td><td>Transparent communication of terms; no harassment</td><td>Contact-frequency caps apply to customers too; all outbound scripts compliance-approved</td></tr>
+      <tr><td><b>Auditability</b></td><td>Every agent action reconstructable</td><td>Immutable audit trail of nudges, calls, escalations, evidence packets</td></tr>
+      <tr><td><b>Model governance</b></td><td>Scoring models reviewed for bias and drift</td><td>Periodic validation of triage and behavior-signature models; <b>no fully automated adverse action</b> against any employee or customer</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ============ 12 CHANNELS ============ -->
+<section id="channels">
+  <div class="h2row"><span class="secnum">12</span><h2>Conversational Channel Layer — WhatsApp, Chatbots, AI Voice</h2></div>
+  <p class="lead">The interventions above need a delivery medium — and the channel itself is a <em>psychological instrument</em>: a question engages where a statement is ignored, and a voice call is harder to dismiss than a message. This layer also generates the data (voice + chat analytics) that turns the whole system predictive.</p>
+
+  <h3>12.1 Channel–intervention matrix</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Channel</th><th>Best used for</th><th>Psychology</th><th>Cautions</th></tr></thead>
+    <tbody>
+      <tr><td><b>WhatsApp push</b> (one-way)</td><td>Daily top-3 queue, progress / loss-framing alerts, customer status updates</td><td>Low friction; ambient salience</td><td>Read-and-ignore risk; volume caps (<a href="#guardrails">§7</a>)</td></tr>
+      <tr><td><b>WhatsApp deep link → case chatbot</b> (Q&amp;A mode)</td><td>Stall-reason capture, commitments, credit-query dispatch, one-tap actions — link opens a chat scoped to that one case</td><td><b>Question–behavior effect:</b> “What did the customer say about the co-applicant condition?” demands an answer where a reminder does not. Non-response = logged avoidance</td><td>Keep sessions case-scoped, under 5 exchanges</td></tr>
+      <tr><td><b>AI voice call → SM / credit manager</b></td><td>Escalation ladder Day 4+ (broken commitment); urgent conditional-approval cases</td><td>Voice is hard to ignore — escalate <em>channel</em>, not volume</td><td>Sparing use only, or habituation and resentment follow</td></tr>
+      <tr><td><b>AI voice call → customer</b></td><td>Confirmatory touchpoints only (§12.4)</td><td>Scalable independent channel; breaks the SM info monopoly at scale</td><td>Discloses AI identity; vernacular support; never negotiates</td></tr>
+      <tr><td><b>Human call</b></td><td>Negotiation, retention, integrity conversations</td><td>Judgment, empathy, authority</td><td>Reserved for high-stakes moments the AI has prepared</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>12.2 Q&amp;A engagement design — how questions create rigor</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th style="width:28%">Mechanism</th><th>Design</th></tr></thead>
+    <tbody>
+      <tr><td><b>Ask specifics, not reminders</b></td><td>“Did the customer agree to the lower LTV?” — specific questions force retrieval and reveal whether the SM actually knows the case</td></tr>
+      <tr><td><b>Every answer becomes data</b></td><td>Chat replies parsed into structured reason codes, dates, objection types — no forms, no separate data entry</td></tr>
+      <tr><td><b>Non-response is a signal</b></td><td>An unanswered direct question is logged avoidance and feeds the <a href="#ladder">escalation ladder</a></td></tr>
+      <tr><td><b>Micro-commitments in chat</b></td><td>“When will you call him? <span class="tag">Today</span> <span class="tag">Tomorrow</span> <span class="tag">Pick a date</span>” — authored commitment (I-6) captured in one tap</td></tr>
+      <tr><td><b>Credit manager mode</b></td><td>Pending queries surfaced as numbered choices with pre-drafted replies: “Reply 1/2/3 to dispatch”</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>12.3 Voice &amp; chat analytics → case confidence → next best action</h3>
+  <div class="callout"><b>Feasibility note:</b> vendor claims about ML voice-analytics scoring run ahead of reality. Start deterministic — call outcome codes, keyword flags, structured chat answers — and earn the right to ML in P3 with a year of labeled data. A rules-based confidence level captures most of the value at a fraction of the risk.</div>
+  <div class="callout blue"><b>Every AI conversation is analysed:</b> customer signals (intent strength, sentiment, hesitation, objection type, competitor mentions, commitment language) + SM signals (answer specificity, avoidance) + file signals (stage velocity, document completeness) fuse into a <b>Case Confidence Level</b> (High / Medium / Low + reason codes). Confidence drives a next-best-action engine with a named owner — and a <b>falling confidence trend is a pre-stall alert that fires before any SLA breach</b>. Predictive, not reactive.</div>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Confidence</th><th>Situation (example)</th><th>Next best action</th><th>Owner</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag gr">High</span></td><td>Stalled at vendor (valuation / legal)</td><td>Auto-chase vendor; zero SM effort spent</td><td>Agent</td></tr>
+      <tr><td><span class="tag gr">High</span></td><td>SM inactive on winnable file</td><td>Priority slot in top-3 queue with progress framing</td><td>SM</td></tr>
+      <tr><td><span class="tag or">Medium</span></td><td>Customer document friction</td><td>Doorstep pickup offer; guided WhatsApp checklist</td><td>Agent + SM</td></tr>
+      <tr><td><span class="tag rd">Low</span></td><td>Competitor mentioned on call</td><td>Same-day retention desk call (<a href="#diversion">§5</a>)</td><td>Retention desk</td></tr>
+      <tr><td><span class="tag rd">Low</span></td><td>Condition rejected by customer</td><td>Restructure options pre-computed; viability review</td><td>Credit + Supervisor</td></tr>
+      <tr><td><span class="tag">Falling trend</span></td><td>Any stage, before SLA breach</td><td>Pre-stall alert with reason codes</td><td>Supervisor</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>12.4 Customer voice touchpoints — confirmatory actions only</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Touchpoint</th><th>Purpose</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td><b>24-hr lead verification</b></td><td>Genuineness + intent check</td><td>Scales <a href="#fake">§4</a> fake-lead deterrence to every lead</td></tr>
+      <tr><td><b>Document reminder + pickup scheduling</b></td><td>Reduce customer-caused stalls</td><td>Cuts login-stage TAT</td></tr>
+      <tr><td><b>PD slot confirmation</b></td><td>Reduce no-shows for credit discussion</td><td>Protects credit team capacity</td></tr>
+      <tr><td><b>Conditional-approval explanation</b></td><td>Customer hears conditions from the institution within hours</td><td>Closes the diversion window (<a href="#diversion">§5</a>)</td></tr>
+      <tr><td><b>Pre-disbursement readiness confirmation</b></td><td>All documents / co-signatories ready before ops slot</td><td>Ops TAT; fewer failed disbursement attempts</td></tr>
+      <tr><td><b>Exit interview on lost cases</b></td><td>“What made you drop?”</td><td>VoC analytics (§10.3) + look-back trigger (§5)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>12.5 Layer guardrails</h3>
+  <div class="guards">
+    <div class="guard"><b>AI always discloses itself</b><p>Compliance (§11) and trust — a discovered deception destroys both channels.</p></div>
+    <div class="guard"><b>Vernacular first</b><p>MSME borrowers need Hindi + regional language voice/chat; English-only kills adoption.</p></div>
+    <div class="guard"><b>Confirmatory, never persuasive, with customers</b><p>Negotiation and retention stay human; AI prepares, human closes.</p></div>
+    <div class="guard"><b>Confidence score is decision support</b><p>Never an automated adverse action against employee or customer (§11 model governance).</p></div>
+    <div class="guard"><b>Voice to staff only at ladder Day 4+</b><p>Preserves the escalate-channel-not-volume principle (§7).</p></div>
+  </div>
 </section>
 
 </div>
